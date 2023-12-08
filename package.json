@@ -1,0 +1,32 @@
+{
+    "name": "vestibular-api",
+    "version": "0.0.0",
+    "scripts": {
+        "migrate": "db-migrate",
+        "init:algolia": "node ./scripts/index.algolia.js",
+        "init:dotenv": "node ./scripts/init.dotenv.js",
+        "dev": "nodemon ./src/server.js",
+        "start": "node ./src/server.js"
+    },
+    "author": "Marcos Saito",
+    "license": "MIT",
+    "dependencies": {
+        "@joi/date": "^2.1.0",
+        "algoliasearch": "^4.20.0",
+        "celebrate": "^15.0.3",
+        "db-migrate": "^0.11.14",
+        "db-migrate-mysql": "^2.3.2",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "joi": "^17.11.0",
+        "lodash": "^4.17.21",
+        "mysql": "^2.18.1",
+        "mysql2": "^3.6.5",
+        "redis": "^4.6.11",
+        "uuidv4": "^6.2.13"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "nodemon": "^3.0.2"
+    }
+}
