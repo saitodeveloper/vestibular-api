@@ -129,3 +129,5 @@ dist
 # Dotenv ignore
 .flaskenv*
 .env
+scripts/.env.prod
+scripts/.env.dev
