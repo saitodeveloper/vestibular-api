@@ -45,7 +45,7 @@ class ConflictError extends Error {
     }
 }
 
-class ExpectationFailedEntityError extends Error {
+class ExpectationFailedError extends Error {
     constructor(message = errorMessages[417]) {
         super(message)
         this.status = 417
@@ -77,7 +77,7 @@ module.exports = {
     BadGateway,
     BadRequestError,
     ConflictError,
-    ExpectationFailedEntityError,
+    ExpectationFailedError,
     ForbidenError,
     InternalError,
     NotFoundError,

@@ -1,7 +1,7 @@
 const {
     InternalError,
     UnauthorizedError,
-    ExpectationFailedEntityError
+    UnprocessableEntityError
 } = require('./errors.http')
 
 const errorMessages = {
@@ -27,7 +27,7 @@ class AuthError extends UnauthorizedError {
     }
 }
 
-class InsertUserAuthError extends ExpectationFailedEntityError {
+class InsertUserAuthError extends UnprocessableEntityError {
     constructor(message = errorMessages[602]) {
         super(message)
         this.systemCode = 602
