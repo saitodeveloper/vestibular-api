@@ -14,28 +14,19 @@ router.post(
     '/login',
     schemaValidator({ body: PostAuthSchema, headers: PostLoginHeader }),
     decryptDevice,
-    async (req, res, next) => {
-        try {
-            const auth = req.body
-            const { serial, name } = req.device
-            const respositoryUser = await service.login(auth, {
-                name,
-                serial
-            })
-            return res.status(200).json(respositoryUser)
-        } catch (error) {
-            next(error)
-        }
-    }
+    routerResolver.safe(async (req, res) => {
+        const auth = req.body
+        const { serial, type } = req.device
+        const respositoryUser = await service.login(auth, { type, serial })
+        return res.status(200).json(respositoryUser)
+    })
 )
 
 router.post(
     '/user',
     schemaValidator({ body: PostAuthUserSchema }),
     routerResolver.safe(async (req, res) => {
-        const user = req.body.user
-        const auth = req.body.auth
-        const device = req.body.device
+        const { user, auth, device } = req.body
         const respositoryUser = await service.createUser(user, auth, device)
         return res.status(201).json(respositoryUser)
     })
