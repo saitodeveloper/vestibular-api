@@ -43,30 +43,19 @@ BEGIN
 	
 	SELECT LAST_INSERT_ID() INTO `_inserted_oauths_id`;
 
-    SELECT 
-		`id`, `user_id` 
-	INTO 
-		`_inserted_device_id`, `_device_user_id`
-	FROM 
-		`devices` 
-	WHERE
-		`serial` = `_device_serial`;
+    INSERT INTO
+        `devices` (`type`, `serial`, `user_id`)
+    VALUE
+        (`_device_type`, `_device_serial`, `_inserted_user_id`);
 
-	IF `_inserted_device_id` IS NULL THEN
-    	INSERT INTO
-			`devices` (`type`, `serial`, `user_id`)
-		VALUE
-			(`_device_type`, `_device_serial`, `_inserted_user_id`);
-		
-		SELECT LAST_INSERT_ID() INTO `_inserted_device_id`;
-    ELSE
-		UPDATE 
-            `devices` 
-        SET 
-            `user_id` = `_inserted_user_id` 
-        WHERE 
-            `id` = `_inserted_device_id`;
-    END IF;
+    SELECT LAST_INSERT_ID() INTO `_inserted_device_id`;
+
+    UPDATE 
+        `activities`
+    SET 
+        `user_id` = `_inserted_user_id`, `device_id` = `_inserted_device_id`
+    WHERE 
+        `device_serial` = `_device_serial` AND `user_id` IS NULL AND `device_id` IS NULL;
 
     COMMIT;
 
@@ -81,8 +70,7 @@ BEGIN
     SELECT 
         `id`,
         `type`,
-        `serial`,
-        `_inserted_device_id` = `user_id` AS `userIdBelongs`
+        `serial`
     FROM `devices` 
     WHERE `id` = `_inserted_device_id`;
 
