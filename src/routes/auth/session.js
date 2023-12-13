@@ -18,7 +18,7 @@ const create = async (
     )
 
     if (exists) {
-        await client.del(exists)
+        await client.del(`token:${exists}`)
     }
 
     await client.hSet(

@@ -10,5 +10,6 @@ module.exports = {
         mysql: require('./mysql'),
         algolia: require('./algolia')
     },
-    env: require('./environment')
+    env: require('./environment'),
+    token: require('./token')
 }
