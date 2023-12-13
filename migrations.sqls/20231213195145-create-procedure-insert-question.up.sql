@@ -32,4 +32,18 @@ BEGIN
 		) js;
     
 	COMMIT;
+
+    SELECT 
+        `id`, `statement`, `institution`, `year`, `exam_name`, `enum`
+    FROM
+        `questions`
+    WHERE
+        `id` = `_inserted_question`;
+
+    SELECT 
+        `id`, `statement`, `correct`
+    FROM
+        `alternatives`
+    WHERE
+        `question_id` = `_inserted_question`;
 END
