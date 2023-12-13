@@ -1,6 +1,6 @@
 CREATE TABLE `alternatives` (
     `id` INT NOT NULL AUTO_INCREMENT,
-    `statment` TEXT NOT NULL,
+    `statement` TEXT NOT NULL,
     `correct` TINYINT NOT NULL,
     `question_id` INT NOT NULL,
     `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

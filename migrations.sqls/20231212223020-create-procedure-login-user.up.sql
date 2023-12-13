@@ -11,9 +11,10 @@ BEGIN
     DECLARE `_salt` VARCHAR(20);
     DECLARE `_test_hash` VARCHAR(160);
     DECLARE `_hash` VARCHAR(160);
+	DECLARE `_user_role` VARCHAR(45);
     
 	SELECT 
-		u.`id` INTO `_test_user_id`
+		u.`id`, u.`role` INTO `_test_user_id`, `_user_role`
 	FROM 
 		`users` u
 	INNER JOIN
@@ -71,5 +72,6 @@ BEGIN
 		`_test_hash` = `_hash` AS `authorized`, 
         `_test_user_id` AS `userId`,
         `_device_serial` AS `deviceSerial`,
-		`_found_device_id` IS NULL AS `newDeviceAdded`;
+		`_found_device_id` IS NULL AS `newDeviceAdded`,
+		`_user_role` AS `role`;
 END
