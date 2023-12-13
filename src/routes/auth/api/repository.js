@@ -24,9 +24,9 @@ const createUser = async (user, auth, device) => {
     if (!Array.isArray(result) && !result.affectedRows)
         throw new InsertUserAuthError()
 
-    const insertedUser = result[0][0]
-    const insertedDevice = result[1][0]
-    const insertedIdentity = result[2][0]
+    const insertedUser = result?.at(0)?.at(0)
+    const insertedDevice = result?.at(1)?.at(0)
+    const insertedIdentity = result?.at(2)?.at(0)
 
     return {
         user: insertedUser,
@@ -35,8 +35,17 @@ const createUser = async (user, auth, device) => {
     }
 }
 
-const findUserWithAuth = async (key, deviceRepository) => {
-    return {}
+const loginUser = async (identity, device) => {
+    const { serial, type } = device
+    const { identityValue, password } = identity
+    const result = await db.mysql.query('CALL `login_user`(?, ?, ?, ?);', [
+        identityValue,
+        password,
+        type,
+        serial
+    ])
+
+    return result?.at(0)?.at(0)
 }
 
 const cacheOtpKey = async (key, password, iv) => {
@@ -49,5 +58,5 @@ const cacheOtpKey = async (key, password, iv) => {
 module.exports = {
     cacheOtpKey,
     createUser,
-    findUserWithAuth
+    loginUser
 }

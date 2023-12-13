@@ -30,28 +30,21 @@ const createUser = async (user, auth, device) => {
 }
 
 const login = async (auth, device) => {
-    const userWithAuth = await repository.findUserWithAuth(auth.email, device)
-
-    if (!userWithAuth?.userId) {
-        throw new AuthError()
-    }
-
-    const validCredentials = await crypt.isHashEqual(
-        auth.password,
-        userWithAuth.authHash
+    const { email: identityValue, password } = auth
+    const userWithAuth = await repository.loginUser(
+        { identityValue, password },
+        device
     )
 
-    if (!validCredentials) {
-        throw new AuthError()
-    }
+    if (!userWithAuth?.authorized) throw new AuthError()
 
-    delete userWithAuth.authHash
+    delete userWithAuth.authorized
     const userToken = token.generate(userWithAuth)
     const authToken = token.generateExpiredToken({ seed: uuidv4() })
     const refreshToken = token.generate({ seed: uuidv4() })
     const { userId } = userWithAuth
-    const { serial, device: deviceName } = device
-    await session.create(userId, deviceName, serial, authToken, userToken)
+    const { serial, type } = device
+    await session.create(userId, type, serial, authToken, userToken)
 
     return { authToken, refreshToken }
 }
