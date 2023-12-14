@@ -32,6 +32,20 @@ BEGIN
             `_alternatives_json`,
             '$[*]' COLUMNS(statement TEXT PATH '$.statement', correct BOOLEAN PATH '$.correct')
         ) js;
-    
+
     COMMIT;
+
+    SELECT 
+        `id`, `statement`, `institution`, `year`, `exam_name`, `enum`
+    FROM
+        `questions`
+    WHERE
+        `id` = `_inserted_question`;
+
+    SELECT 
+        `id`, `statement`, `correct`
+    FROM
+        `alternatives`
+    WHERE
+        `question_id` = `_inserted_question`;
 END

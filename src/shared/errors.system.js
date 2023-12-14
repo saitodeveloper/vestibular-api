@@ -7,7 +7,8 @@ const {
 const errorMessages = {
     600: 'unexpected database error',
     601: 'credentilas invalid or not existed',
-    602: 'unable to create auth users'
+    602: 'unable to create auth users',
+    603: 'unable to cerate question'
 }
 const context = 'system'
 
@@ -35,8 +36,17 @@ class InsertUserAuthError extends UnprocessableEntityError {
     }
 }
 
+class InsertQuestionError extends UnauthorizedError {
+    constructor(message = errorMessages[603]) {
+        super(message)
+        this.systemCode = 603
+        this.systemCodeContext = `${context}:603`
+    }
+}
+
 module.exports = {
     AuthError,
     DbError,
-    InsertUserAuthError
+    InsertUserAuthError,
+    InsertQuestionError
 }
