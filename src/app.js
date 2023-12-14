@@ -7,6 +7,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 const auth = require('./routes/auth/api')
+const question = require('./routes/question/api')
 
 const app = express()
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: false }))
 
 /** Routes */
 app.use('/v1/auth', auth)
+app.use('/v1/question', question)
 
 /** Not found Handler */
 app.use((_req, _res, next) => {

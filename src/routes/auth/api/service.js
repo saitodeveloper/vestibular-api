@@ -39,6 +39,7 @@ const login = async (auth, device) => {
     if (!userWithAuth?.authorized) throw new AuthError()
 
     delete userWithAuth.authorized
+    delete userWithAuth.newDeviceAdded
     const userToken = token.generate(userWithAuth)
     const authToken = token.generateExpiredToken({ seed: uuidv4() })
     const refreshToken = token.generate({ seed: uuidv4() })
