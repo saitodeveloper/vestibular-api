@@ -2,15 +2,16 @@ const { db, errors } = require('../../shared')
 
 const { InsertActivityError } = errors.system
 
-const insertActivity = async (activity) => {
-    const { idAlternative, user_id, device_id, device_serial, idQuestion,  } = activity
+const insertActivity = async (activity, auth) => {
+    const { idAlternative, idQuestion  } = activity
+    const { userId, deviceSerial, deviceId } = auth
     const result = await db.mysql.query(
         'CALL `insert_activity`(?, ?, ?, ?, ?)',
         [
             idAlternative,
-            user_id,
-            device_id,
-            device_serial,
+            userId,
+            deviceId,
+            deviceSerial,
             idQuestion
         ]
     )
@@ -18,8 +19,7 @@ const insertActivity = async (activity) => {
     if (!Array.isArray(result) && !result.affectedRows)
         throw new InsertActivityError()
 
-    console.log(result)
-    return result
+    return result?.at(0)?.at(0)
 }
 
 module.exports = { insertActivity }

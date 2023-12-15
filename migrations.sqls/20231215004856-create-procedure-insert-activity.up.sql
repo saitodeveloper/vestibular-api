@@ -24,15 +24,4 @@ BEGIN
         (`_is_answer_correct`, `_user_id`, `_device_id`, `_device_serial`, `_question_id`);
     
     SELECT `_is_answer_correct` AS `isAnswerCorrect`;
-END
-
-
-
-
-    
-
-    
-
-
-    
-    
+END   
