@@ -5,6 +5,8 @@ CREATE TABLE `activities` (
     `device_id` INT NULL,
     `device_serial` VARCHAR(90) NOT NULL,
     `question_id` INT NOT NULL,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`),
     INDEX `fk_activity_device_idx` (`device_id` ASC) VISIBLE,
     INDEX `fk_activity_user_idx` (`user_id` ASC) VISIBLE,

@@ -58,11 +58,22 @@ const AlternativeSchema = {
     ...BaseSchema
 }
 
+const ActivitySchema = {
+    correct: joi.boolean(),
+    userId: joi.number(),
+    deviceId: joi.number(),
+    deviceSerial: joi.string().min(1).max(90),
+    idQuestion: joi.number(),
+    idAlternative: joi.number(),
+    ...BaseSchema
+}
+
 module.exports = {
     OAuthSchema,
     DeviceSchema,
     IdentitySchema,
     UserSchema,
     QuestionSchema,
-    AlternativeSchema
+    AlternativeSchema,
+    ActivitySchema
 }
