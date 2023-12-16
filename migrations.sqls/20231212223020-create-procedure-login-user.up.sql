@@ -8,7 +8,7 @@ BEGIN
 	DECLARE `_test_user_id` INT;
     DECLARE `_found_device_id` INT;
     DECLARE `_latest_hash_salt` VARCHAR(160);
-    DECLARE `_salt` VARCHAR(20);
+    DECLARE `_salt` TEXT;
     DECLARE `_test_hash` VARCHAR(160);
     DECLARE `_hash` VARCHAR(160);
 	DECLARE `_user_role` VARCHAR(45);
