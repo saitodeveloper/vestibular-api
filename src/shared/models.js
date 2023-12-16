@@ -58,11 +58,42 @@ const AlternativeSchema = {
     ...BaseSchema
 }
 
+const ActivitySchema = {
+    correct: joi.boolean(),
+    userId: joi
+        .number()
+        .integer()
+        .positive()
+        .min(1)
+        .max(Number.MAX_SAFE_INTEGER),
+    deviceId: joi
+        .number()
+        .integer()
+        .positive()
+        .min(1)
+        .max(Number.MAX_SAFE_INTEGER),
+    deviceSerial: joi.string().min(1).max(90),
+    questionId: joi
+        .number()
+        .integer()
+        .positive()
+        .min(1)
+        .max(Number.MAX_SAFE_INTEGER),
+    alternativeId: joi
+        .number()
+        .integer()
+        .positive()
+        .min(1)
+        .max(Number.MAX_SAFE_INTEGER),
+    ...BaseSchema
+}
+
 module.exports = {
     OAuthSchema,
     DeviceSchema,
     IdentitySchema,
     UserSchema,
     QuestionSchema,
-    AlternativeSchema
+    AlternativeSchema,
+    ActivitySchema
 }

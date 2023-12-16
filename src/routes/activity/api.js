@@ -1,16 +1,16 @@
 const express = require('express')
 const router = express.Router()
 const { routerResolver } = require('../../shared')
+const { ActivityPostBody } = require('./models')
 const { celebrate: schemaValidator } = require('celebrate')
-const { QuestionPostSchema } = require('./models')
 const service = require('./service')
 
 router.post(
     '',
-    schemaValidator({ body: QuestionPostSchema }),
+    schemaValidator({ body: ActivityPostBody }),
     routerResolver.safe(async (req, res) => {
-        const question = req.body
-        const result = await service.createQuestion(question)
+        const activity = req.body
+        const result = await service.createActivity(activity)
         return res.status(201).json(result)
     })
 )
