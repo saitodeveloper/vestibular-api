@@ -60,11 +60,31 @@ const AlternativeSchema = {
 
 const ActivitySchema = {
     correct: joi.boolean(),
-    userId: joi.number(),
-    deviceId: joi.number(),
+    userId: joi
+        .number()
+        .integer()
+        .positive()
+        .min(1)
+        .max(Number.MAX_SAFE_INTEGER),
+    deviceId: joi
+        .number()
+        .integer()
+        .positive()
+        .min(1)
+        .max(Number.MAX_SAFE_INTEGER),
     deviceSerial: joi.string().min(1).max(90),
-    idQuestion: joi.number(),
-    idAlternative: joi.number(),
+    questionId: joi
+        .number()
+        .integer()
+        .positive()
+        .min(1)
+        .max(Number.MAX_SAFE_INTEGER),
+    alternativeId: joi
+        .number()
+        .integer()
+        .positive()
+        .min(1)
+        .max(Number.MAX_SAFE_INTEGER),
     ...BaseSchema
 }
 

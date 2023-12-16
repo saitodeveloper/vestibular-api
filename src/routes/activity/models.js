@@ -4,8 +4,8 @@ const { models } = require('../../shared')
 const { ActivitySchema } = models
 
 const ActivityPostBody = joi.object({
-    idQuestion: ActivitySchema.idQuestion.required(),
-    idAlternative: ActivitySchema.idAlternative.required()
+    questionId: ActivitySchema.questionId.required(),
+    alternativeId: ActivitySchema.alternativeId.required()
 })
 
 module.exports = { ActivityPostBody }
