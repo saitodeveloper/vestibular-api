@@ -1,6 +1,7 @@
 const JoiDateExtension = require('@joi/date')
 const joi = require('joi').extend(JoiDateExtension)
 
+/** Database schemas */
 const BaseSchema = {
     createdAt: joi.date(),
     id: joi.number(),
@@ -88,6 +89,18 @@ const ActivitySchema = {
     ...BaseSchema
 }
 
+/** Global objects */
+const PaginateObject = {
+    page: joi
+        .number()
+        .integer()
+        .positive()
+        .min(1)
+        .max(Number.MAX_SAFE_INTEGER)
+        .default(1),
+    limit: joi.number().integer().positive().min(1).max(500).default(10)
+}
+
 module.exports = {
     OAuthSchema,
     DeviceSchema,
@@ -95,5 +108,6 @@ module.exports = {
     UserSchema,
     QuestionSchema,
     AlternativeSchema,
-    ActivitySchema
+    ActivitySchema,
+    PaginateObject
 }
