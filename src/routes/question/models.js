@@ -1,9 +1,9 @@
 const joi = require('joi')
 const { models } = require('../../shared')
 
-const { QuestionSchema, AlternativeSchema } = models
+const { QuestionSchema, AlternativeSchema, PaginateObject } = models
 
-const QuestionPostSchema = joi.object({
+const QuestionPostBody = joi.object({
     statement: QuestionSchema.statement.required(),
     institution: QuestionSchema.institution.required(),
     year: QuestionSchema.year.required(),
@@ -20,4 +20,12 @@ const QuestionPostSchema = joi.object({
         .required()
 })
 
-module.exports = { QuestionPostSchema }
+const QuestionGetQuery = joi.object({
+    ...PaginateObject
+})
+
+const QuestionGetParams = joi.object({
+    id: QuestionSchema.id
+})
+
+module.exports = { QuestionPostBody, QuestionGetQuery, QuestionGetParams }

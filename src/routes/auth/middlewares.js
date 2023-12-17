@@ -9,7 +9,10 @@ const auth = async (req, _res, next) => {
         const authToken = token.encodedPayload(req.headers.authorization)
         const userToken = await session.find('token', authToken)
         const decoded = token.verify(userToken)
-        req.auth = decoded
+
+        if (!req.context) req.context = {}
+        req.context.auth = decoded
+
         next()
     } catch (error) {
         next(new UnauthorizedError())
@@ -35,7 +38,8 @@ const decryptDevice = async (req, _res, next) => {
         const password = await client.get(`otp:${otpkey}`)
         const deviceJSON = decryptAES(encryptDevice, password)
 
-        req.device = JSON.parse(deviceJSON)
+        if (!req.context) req.context = {}
+        req.context.device = JSON.parse(deviceJSON)
         next()
     } catch {
         next(new UnauthorizedError())

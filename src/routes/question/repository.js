@@ -28,4 +28,20 @@ const insertQuestion = async (question, alternatives) => {
     return { ...resultQuestion, alternatives: resultAlternatives }
 }
 
-module.exports = { insertQuestion }
+const searchQuestion = async search => {
+    const { id, limit, offset } = search
+    const result = await db.mysql.query(
+        'CALL `search_question_inclusive`(?, ?, ?, ?, ?, ?, ?, ?);',
+        [id, null, null, null, null, null, limit, offset]
+    )
+
+    if (!Array.isArray(result) && !result.affectedRows)
+        throw new InsertQuestionError()
+
+    const resultTotal = result?.at(0)?.at(0)
+    const results = result?.at(1)
+
+    return { ...resultTotal, results }
+}
+
+module.exports = { insertQuestion, searchQuestion }
