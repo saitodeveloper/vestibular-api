@@ -47,7 +47,16 @@ BEGIN
     
     -- Get search results
     SELECT 
-        * 
+        qtemp.`id` AS `questionId`,
+        qtemp.`created_at` AS `questionCreatedAt`,
+        qtemp.`updated_at` AS `questionUpdatedAt`,
+        qtemp.`statement` AS `questionStatement`,
+        qtemp.*,
+        a.`id` AS `alternativeId`,
+        a.`statement` AS `alternativeStatement`,
+        a.`created_at` AS `alternativeCreatedAt`,
+        a.`updated_at` AS `alternativeUpdatedAt`,
+        a.*
     FROM (
         SELECT
             q.*
@@ -56,6 +65,18 @@ BEGIN
         WHERE
             `_no_filters` OR
             (`_id` IS NOT NULL AND `id` = `_id`) OR
+            (
+                `_id_list` IS NOT NULL AND `id` IN 
+                (
+                    SELECT
+                    js.*
+                    FROM
+                        JSON_TABLE(
+                            `_id_list`,
+                            '$[*]' COLUMNS(id INT PATH "$")
+                        ) js
+                )
+            ) OR
             (`_institution` IS NOT NULL AND `institution` = `_institution`) OR
             (`_year` IS NOT NULL AND `year` = `_year`) OR
             (`_exam_name` IS NOT NULL AND `exam_name` = `_exam_name`) OR
