@@ -1,4 +1,4 @@
-const { db, errors } = require('../../shared')
+const { db, errors, caseConverter } = require('../../shared')
 
 const { InsertQuestionError } = errors.system
 
@@ -30,18 +30,61 @@ const insertQuestion = async (question, alternatives) => {
 
 const searchQuestion = async search => {
     const { id, limit, offset } = search
-    const result = await db.mysql.query(
+    const dbResult = await db.mysql.query(
         'CALL `search_question_inclusive`(?, ?, ?, ?, ?, ?, ?, ?);',
         [id, null, null, null, null, null, limit, offset]
     )
 
-    if (!Array.isArray(result) && !result.affectedRows)
+    if (!Array.isArray(dbResult) && !dbResult.affectedRows)
         throw new InsertQuestionError()
 
-    const resultTotal = result?.at(0)?.at(0)
-    const results = result?.at(1)
+    const resultTotal = dbResult?.at(0)?.at(0)
+    let results = dbResult?.at(1)
 
-    return { ...resultTotal, results }
+    results = results
+        .map(question => {
+            questionCamelCase = caseConverter.converter(question)
+            return questionCamelCase
+        })
+        .reduce((reducer, question) => {
+            const {
+                questionId,
+                questionStatement,
+                questionCreatedAt,
+                questionUpdatedAt,
+                institution,
+                year,
+                alternativeId,
+                alternativeStatement,
+                alternativeCreatedAt,
+                alternativeUpdatedAt,
+                correct
+            } = question
+            if (!reducer[questionId]) {
+                reducer[questionId] = {
+                    id: questionId,
+                    statement: questionStatement,
+                    createdAt: questionCreatedAt,
+                    updatedAt: questionUpdatedAt,
+                    institution,
+                    year,
+                    enum: question.enum,
+                    alternatives: []
+                }
+            }
+
+            reducer[questionId].alternatives.push({
+                id: alternativeId,
+                statement: alternativeStatement,
+                createdAt: alternativeCreatedAt,
+                updatedAt: alternativeUpdatedAt,
+                correct: correct === 1
+            })
+
+            return reducer
+        }, {})
+
+    return { ...resultTotal, results: Object.values(results) }
 }
 
 module.exports = { insertQuestion, searchQuestion }
