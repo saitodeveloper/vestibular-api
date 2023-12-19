@@ -11,5 +11,6 @@ module.exports = {
         algolia: require('./algolia')
     },
     env: require('./environment'),
-    token: require('./token')
+    token: require('./token'),
+    caseConverter: require('./case.converter')
 }

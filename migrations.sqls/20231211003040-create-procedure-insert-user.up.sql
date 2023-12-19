@@ -1,47 +1,47 @@
 CREATE PROCEDURE `insert_user` (
-	IN `_first_name` VARCHAR(45),
+    IN `_first_name` VARCHAR(45),
     IN `_last_name` VARCHAR(45),
     IN `_role` VARCHAR(45),
     IN `_identity_type` VARCHAR(45),
-	IN `_identity_value` VARCHAR(45),
+    IN `_identity_value` VARCHAR(45),
     IN `_oauth_hash` VARCHAR(160),
     IN `_device_type` VARCHAR(45),
     IN `_device_serial` VARCHAR(90)
 )
 BEGIN
-	DECLARE `_inserted_user_id` INT;
-	DECLARE `_inserted_indentity_id` INT;
-	DECLARE `_inserted_oauths_id` INT;
-	DECLARE `_inserted_device_id` INT;
+    DECLARE `_inserted_user_id` INT;
+    DECLARE `_inserted_indentity_id` INT;
+    DECLARE `_inserted_oauths_id` INT;
+    DECLARE `_inserted_device_id` INT;
     DECLARE `_device_user_id` INT;
     
     DECLARE exit handler for sqlexception
-	BEGIN
+    BEGIN
         ROLLBACK;
     END;
 
     START TRANSACTION;
 
     INSERT INTO 
-		`users` (`first_name`, `last_name`, `role`) 
-	VALUE 
-		(`_first_name`, `_last_name`, `_role`);
+        `users` (`first_name`, `last_name`, `role`) 
+    VALUE 
+        (`_first_name`, `_last_name`, `_role`);
     
-	SELECT LAST_INSERT_ID() INTO `_inserted_user_id`;
+    SELECT LAST_INSERT_ID() INTO `_inserted_user_id`;
     
     INSERT INTO
-		`identities` (`type`, `value`, `user_id`)
-	VALUE
-		(`_identity_type`, `_identity_value`, `_inserted_user_id`);
-	
-	SELECT LAST_INSERT_ID() INTO `_inserted_indentity_id`;
+        `identities` (`type`, `value`, `user_id`)
+    VALUE
+        (`_identity_type`, `_identity_value`, `_inserted_user_id`);
     
-	INSERT INTO
-		`oauths` (`hash`, `user_id`)
-	VALUE
-		(`_oauth_hash`, `_inserted_user_id`);
-	
-	SELECT LAST_INSERT_ID() INTO `_inserted_oauths_id`;
+    SELECT LAST_INSERT_ID() INTO `_inserted_indentity_id`;
+    
+    INSERT INTO
+        `oauths` (`hash`, `user_id`)
+    VALUE
+        (`_oauth_hash`, `_inserted_user_id`);
+    
+    SELECT LAST_INSERT_ID() INTO `_inserted_oauths_id`;
 
     INSERT INTO
         `devices` (`type`, `serial`, `user_id`)
@@ -59,7 +59,7 @@ BEGIN
 
     COMMIT;
 
-	SELECT 
+    SELECT 
         `id`, 
         `first_name` AS firstName, 
         `last_name` AS lastName,

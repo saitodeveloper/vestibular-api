@@ -34,7 +34,7 @@ router.get(
     schemaValidator({ params: QuestionGetParams }),
     routerResolver.safe(async (req, res) => {
         const { id } = req.params
-        const result = await service.searchQuestionById(null, id)
+        const result = await service.searchQuestionById(id)
         return res.status(result ? 201 : 404).json(result)
     })
 )
