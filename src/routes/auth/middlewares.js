@@ -3,10 +3,26 @@ const { decryptAES } = require('./crypt')
 const session = require('./session')
 
 const { ForbidenError, UnauthorizedError } = errors.http
+const { UnparsableToken, InvalidDevice } = errors.system
+
+const decodeAuth = async (req, _res, next) => {
+    if (!req.context) req.context = {}
+    if (!req.headers.authorization) return next()
+
+    try {
+        const authToken = token.getBearerToken(req.headers.authorization)
+        const userToken = await session.find('token', authToken)
+        const decoded = token.getPayload(userToken)
+        req.context.auth = decoded
+        next()
+    } catch {
+        next(new UnparsableToken())
+    }
+}
 
 const auth = async (req, _res, next) => {
     try {
-        const authToken = token.encodedPayload(req.headers.authorization)
+        const authToken = token.getBearerToken(req.headers.authorization)
         const userToken = await session.find('token', authToken)
         const decoded = token.verify(userToken)
 
@@ -20,7 +36,7 @@ const auth = async (req, _res, next) => {
 }
 
 const role = list => (req, _res, next) => {
-    const role = req.auth.authRole
+    const role = req.context?.auth?.role
     const hasRole = list.includes(role)
 
     if (hasRole) {
@@ -42,8 +58,8 @@ const decryptDevice = async (req, _res, next) => {
         req.context.device = JSON.parse(deviceJSON)
         next()
     } catch {
-        next(new UnauthorizedError())
+        next(new InvalidDevice())
     }
 }
 
-module.exports = { auth, decryptDevice, role }
+module.exports = { auth, decodeAuth, decryptDevice, role }
