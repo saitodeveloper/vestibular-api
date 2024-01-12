@@ -9,7 +9,9 @@ const errorMessages = {
     601: 'credentilas invalid or not existed',
     602: 'unable to create auth users',
     603: 'unable to cerate question',
-    604: 'unable to create activity'
+    604: 'unable to create activity',
+    605: 'unprocessable token',
+    606: 'unable to check device'
 }
 const context = 'system'
 
@@ -53,10 +55,28 @@ class InsertActivityError extends UnprocessableEntityError {
     }
 }
 
+class UnparsableToken extends UnprocessableEntityError {
+    constructor(message = errorMessages[605]) {
+        super(message)
+        this.systemCode = 605
+        this.systemCodeContext = `${context}:605`
+    }
+}
+
+class InvalidDevice extends UnprocessableEntityError {
+    constructor(message = errorMessages[606]) {
+        super(message)
+        this.systemCode = 606
+        this.systemCodeContext = `${context}:606`
+    }
+}
+
 module.exports = {
     AuthError,
     DbError,
     InsertUserAuthError,
     InsertQuestionError,
-    InsertActivityError
+    InsertActivityError,
+    UnparsableToken,
+    InvalidDevice
 }
