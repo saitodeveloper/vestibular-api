@@ -8,9 +8,12 @@ const {
     QuestionGetParams
 } = require('./models')
 const service = require('./service')
+const { auth, role } = require('../auth/middlewares')
 
 router.post(
     '',
+    auth,
+    role(['admin']),
     schemaValidator({ body: QuestionPostBody }),
     routerResolver.safe(async (req, res) => {
         const question = req.body
@@ -35,7 +38,7 @@ router.get(
     routerResolver.safe(async (req, res) => {
         const { id } = req.params
         const result = await service.searchQuestionById(id)
-        return res.status(result ? 201 : 404).json(result)
+        return res.status(result ? 200 : 404).json(result)
     })
 )
 

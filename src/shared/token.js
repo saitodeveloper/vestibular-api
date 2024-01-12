@@ -9,13 +9,23 @@ const generate = (obj, options = {}) =>
 const generateExpiredToken = obj =>
     generate(obj, { expiresIn: getJwtExpiresIn() })
 
-const encodedPayload = token => {
+const getBearerToken = token => {
     const parts = token.split(' ')
     const isBearerToken = parts.length === 2 && token.indexOf('Bearer') === 0
 
     if (!isBearerToken) throw new Error('invalid bearer token')
 
     return parts[1]
+}
+
+const getPayload = token => {
+    try {
+        const parts = token.split('.')
+        const base64 = parts[1]
+        return JSON.parse(base64)
+    } catch {
+        throw new Error('invalid bearer token')
+    }
 }
 
 const verify = token => {
@@ -25,7 +35,8 @@ const verify = token => {
 const payload = token => jwt.verify(token, getJwtPrivateKey())
 
 module.exports = {
-    encodedPayload,
+    getBearerToken,
+    getPayload,
     generate,
     generateExpiredToken,
     payload,
