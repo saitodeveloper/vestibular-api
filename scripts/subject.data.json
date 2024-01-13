@@ -1,0 +1,1676 @@
+[
+  {
+    "name": "Espanhol"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Gramática"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Vocabulário"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Compreensão de Texto"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Expressão Oral"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Expressão Escrita"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Cultura Espanhola"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "História da Espanha"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Literatura Espanhola"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Arte Espanhola"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Filmes e Música em Espanhol"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Civilizações Pré-Colombianas"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Colonização da América"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Independência das Américas"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Ditaduras Militares na América Latina"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Movimentos Sociais"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Globalização"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Integração Regional"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Problemas Socioeconômicos na América Latina"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Migração"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Cultura Indígena"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Relações Internacionais"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Economia Latino-Americana"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Desenvolvimento Sustentável"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Problemas Ambientais"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Diversidade Cultural na América Latina"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Literatura Latino-Americana"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Movimentos Artísticos na América Latina"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Influência Africana na Cultura Latina"
+  },
+  {
+    "parent": "Espanhol",
+    "name": "Educação na América Latina"
+  },
+  {
+    "name": "Química"
+  },
+  {
+    "parent": "Química",
+    "name": "Química Geral"
+  },
+  {
+    "parent": "Química",
+    "name": "Química Orgânica"
+  },
+  {
+    "parent": "Química",
+    "name": "Físico-Química"
+  },
+  {
+    "parent": "Química",
+    "name": "Estequiometria"
+  },
+  {
+    "parent": "Química",
+    "name": "Termoquímica"
+  },
+  {
+    "parent": "Química",
+    "name": "Cinética Química"
+  },
+  {
+    "parent": "Química",
+    "name": "Equilíbrio Químico"
+  },
+  {
+    "parent": "Química",
+    "name": "Eletroquímica"
+  },
+  {
+    "parent": "Química",
+    "name": "Química Nuclear"
+  },
+  {
+    "parent": "Química",
+    "name": "Ácidos e Bases"
+  },
+  {
+    "parent": "Química",
+    "name": "Funções Orgânicas"
+  },
+  {
+    "parent": "Química",
+    "name": "Isomeria"
+  },
+  {
+    "parent": "Química",
+    "name": "Reações Orgânicas"
+  },
+  {
+    "parent": "Química",
+    "name": "Química Ambiental"
+  },
+  {
+    "parent": "Química",
+    "name": "Química dos Polímeros"
+  },
+  {
+    "parent": "Química",
+    "name": "Química Inorgânica"
+  },
+  {
+    "parent": "Química",
+    "name": "Materiais Cerâmicos e Poliméricos"
+  },
+  {
+    "parent": "Química",
+    "name": "Radioatividade"
+  },
+  {
+    "parent": "Química",
+    "name": "Tabela Periódica"
+  },
+  {
+    "parent": "Química",
+    "name": "Ligações Químicas"
+  },
+  {
+    "parent": "Química",
+    "name": "Forças Intermoleculares"
+  },
+  {
+    "parent": "Química",
+    "name": "Cálculos Estequiométricos"
+  },
+  {
+    "parent": "Química",
+    "name": "Modelos Atômicos"
+  },
+  {
+    "parent": "Química",
+    "name": "Química Experimental"
+  },
+  {
+    "parent": "Química",
+    "name": "Reações Químicas"
+  },
+  {
+    "parent": "Química",
+    "name": "Soluções"
+  },
+  {
+    "parent": "Química",
+    "name": "Propriedades Coligativas"
+  },
+  {
+    "parent": "Química",
+    "name": "Equações Químicas"
+  },
+  {
+    "parent": "Química",
+    "name": "Tratamento de Água e Efluentes"
+  },
+  {
+    "name": "Língua Portuguesa"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Morfologia"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Sintaxe"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Interpretação de Textos"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Literatura Brasileira"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Gramática"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Redação"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Figuras de Linguagem"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Leitura e Produção de Texto"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Ortografia"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Semântica"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Análise Gramatical"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Concordância Verbal e Nominal"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Regência Verbal e Nominal"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Pontuação"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Vocabulário"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Estilística"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Gêneros Textuais"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Variedades Linguísticas"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Literatura Portuguesa"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Literatura Estrangeira"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Modernismo"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Romantismo"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Realismo"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Barroco"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Arcadismo"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Parnasianismo"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Simbolismo"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Contos e Crônicas"
+  },
+  {
+    "parent": "Língua Portuguesa",
+    "name": "Dramaturgia"
+  },
+  {
+    "name": "História da Arte"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Pré-História"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Arte Egípcia"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Arte Grega"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Arte Romana"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Arte Bizantina"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Arte Islâmica"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Arte Medieval"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Renascimento"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Barroco"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Rococó"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Neoclassicismo"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Romantismo na Arte"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Realismo na Arte"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Impressionismo"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Pós-Impressionismo"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Art Nouveau"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Fauvismo"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Cubismo"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Expressionismo"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Surrealismo"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Arte Abstrata"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Arte Contemporânea"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Arte Africana"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Arte Asiática"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Arte Indígena"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Arte Brasileira"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Arte Moderna Brasileira"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Arte Contemporânea Brasileira"
+  },
+  {
+    "parent": "História da Arte",
+    "name": "Fotografia e Cinema na Arte"
+  },
+  {
+    "name": "Geografia"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Climatologia"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Biomas"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Ecossistemas"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Hidrografia"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Relevo"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Geopolítica"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Globalização"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Demografia"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Migrações"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Urbanização"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Desenvolvimento Sustentável"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Geopolítica Mundial"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Regionalização do Espaço Mundial"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Geografia Agrária"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Geografia Urbana"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Geografia Econômica"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Geografia Cultural"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Geografia Física"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Geografia Humana"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Cartografia"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Geografia do Brasil"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Regionalização do Brasil"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Problemas Ambientais"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Efeito Estufa"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Desmatamento"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Poluição"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Recursos Naturais"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Aquecimento Global"
+  },
+  {
+    "parent": "Geografia",
+    "name": "Impactos Ambientais"
+  },
+  {
+    "name": "Geopolítica e Atualidades"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Globalização"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Blocos Econômicos"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Conflitos Internacionais"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Mudanças Climáticas"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Desenvolvimento Sustentável"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Terrorismo"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Migrações Globais"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Economia Mundial"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Política Internacional"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Organizações Internacionais"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Direitos Humanos"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Cultura Global"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Desigualdades Sociais"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Tecnologias Emergentes"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Saúde Global"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Educação Global"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Religiões no Mundo"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Movimentos Sociais Globais"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Energias Renováveis"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Crises Humanitárias"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Exploração Espacial"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Inovações Tecnológicas"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Cibersegurança"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Inteligência Artificial"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Big Data"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Cidades Sustentáveis"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Democracia e Governança Global"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Fake News e Desinformação"
+  },
+  {
+    "parent": "Geopolítica e Atualidades",
+    "name": "Pandemias Globais"
+  },
+  {
+    "name": "Inglês"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Grammar"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Vocabulary"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Reading Comprehension"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Listening Comprehension"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Writing"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Speaking"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Idioms and Expressions"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Phrasal Verbs"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Tenses"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Conditional Sentences"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Modals"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Passive Voice"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Reported Speech"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Relative Clauses"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Subjunctive Mood"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Articles"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Prepositions"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Conjunctions"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Word Formation"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Synonyms and Antonyms"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Collocations"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Cohesion and Coherence"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Critical Thinking"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Literature"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Poetry"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Short Stories"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Drama"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Novels"
+  },
+  {
+    "parent": "Inglês",
+    "name": "Cultural Aspects"
+  },
+  {
+    "name": "Filosofia"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Ética"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Filosofia Política"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Epistemologia"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Metafísica"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Lógica"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Filosofia da Mente"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Filosofia da Linguagem"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Estética"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Filosofia da Ciência"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Filosofia da História"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Filosofia da Religião"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Filosofia do Direito"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Filosofia Social"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Filosofia da Educação"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Filosofia Ambiental"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Filosofia Prática"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Teoria do Conhecimento"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Existencialismo"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Fenomenologia"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Racionalismo"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Empirismo"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Pragmatismo"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Positivismo"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Idealismo"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Materialismo"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Teoria Crítica"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Hermenêutica"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Pós-modernismo"
+  },
+  {
+    "parent": "Filosofia",
+    "name": "Filosofia Oriental"
+  },
+  {
+    "name": "Sociologia"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia Geral"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia Jurídica"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia Urbana"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia Rural"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia da Educação"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia do Trabalho"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia das Organizações"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia Política"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia da Saúde"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia Ambiental"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia da Religião"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia da Comunicação"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia do Gênero"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia da Família"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia das Minorias"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia da Violência"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia do Conflito"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Teorias Sociológicas"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Funcionalismo"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Conflito e Teoria do Conflito"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Teoria Crítica"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Interacionismo Simbólico"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Estruturalismo"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Pós-modernismo"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Sociologia Comparada"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Globalização e Sociedade"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Movimentos Sociais"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Mudança Social"
+  },
+  {
+    "parent": "Sociologia",
+    "name": "Instituições Sociais"
+  },
+  {
+    "name": "Literatura"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Barroco"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Arcadismo"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Romantismo"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Realismo"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Naturalismo"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Parnasianismo"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Simbolismo"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Modernismo"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Pós-modernismo"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Literatura Brasileira"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Literatura Portuguesa"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Literatura Africana"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Literatura Norte-Americana"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Literatura Latino-Americana"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Literatura Asiática"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Literatura Europeia"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Teoria Literária"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Crítica Literária"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Análise de Texto Literário"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Gêneros Literários"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Poesia"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Prosa"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Drama"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Épocas Literárias"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Movimentos Literários"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Literatura Comparada"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Literatura e Sociedade"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Literatura e Psicanálise"
+  },
+  {
+    "parent": "Literatura",
+    "name": "Recepção Literária"
+  },
+  {
+    "name": "Matemática"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Álgebra"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Geometria"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Trigonometria"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Análise Combinatória"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Probabilidade"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Estatística"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Funções"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Geometria Analítica"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Cálculo Diferencial"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Cálculo Integral"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Equações Diferenciais"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Matrizes"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Determinantes"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Sistemas Lineares"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Números Complexos"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Polinômios"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Logaritmos"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Sequências e Progressões"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Teorema de Pitágoras"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Teorema de Tales"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Geometria Espacial"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Geometria Plana"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Poliedros"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Cone"
+  },
+  {
+    "parent": "Matemática",
+    "name": " Cilindro e Esfera"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Trigonometria no Triângulo Retângulo"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Circunferência e Círculo"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Equações e Inequações"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Razão e Proporção"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Porcentagem"
+  },
+  {
+    "parent": "Matemática",
+    "name": "Juros Simples e Compostos"
+  },
+  {
+    "name": "Biologia"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Citologia"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Histologia"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Genética"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Evolução"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Ecologia"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Botânica"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Zoologia"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Anatomia Humana"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Fisiologia Humana"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Microbiologia"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Vírus"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Bactérias"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Fungos"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Protozoários"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Helmintos"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Biomas"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Ciclos Biogeoquímicos"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Teorias da Evolução"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Seleção Natural"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Adaptações Biológicas"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Especiação"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Ecossistemas"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Cadeia Alimentar"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Teias Alimentares"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Sustentabilidade"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Biodiversidade"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Conservação Ambiental"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Poluição Ambiental"
+  },
+  {
+    "parent": "Biologia",
+    "name": "Doenças Transmissíveis"
+  },
+  {
+    "name": "Física"
+  },
+  {
+    "parent": "Física",
+    "name": "Mecânica"
+  },
+  {
+    "parent": "Física",
+    "name": "Termodinâmica"
+  },
+  {
+    "parent": "Física",
+    "name": "Óptica"
+  },
+  {
+    "parent": "Física",
+    "name": "Ondulatória"
+  },
+  {
+    "parent": "Física",
+    "name": "Eletrostática"
+  },
+  {
+    "parent": "Física",
+    "name": "Eletrodinâmica"
+  },
+  {
+    "parent": "Física",
+    "name": "Eletromagnetismo"
+  },
+  {
+    "parent": "Física",
+    "name": "Leis de Newton"
+  },
+  {
+    "parent": "Física",
+    "name": "Gravitação Universal"
+  },
+  {
+    "parent": "Física",
+    "name": "Cinemática"
+  },
+  {
+    "parent": "Física",
+    "name": "Dinâmica"
+  },
+  {
+    "parent": "Física",
+    "name": "Eletromagnetismo"
+  },
+  {
+    "parent": "Física",
+    "name": "Fenômenos Ondulatórios"
+  },
+  {
+    "parent": "Física",
+    "name": "Óptica Geométrica"
+  },
+  {
+    "parent": "Física",
+    "name": "Física Moderna"
+  },
+  {
+    "parent": "Física",
+    "name": "Eletrostática"
+  },
+  {
+    "parent": "Física",
+    "name": "Corrente Elétrica"
+  },
+  {
+    "parent": "Física",
+    "name": "Campos Elétricos e Magnéticos"
+  },
+  {
+    "parent": "Física",
+    "name": "Leis de Kirchhoff"
+  },
+  {
+    "parent": "Física",
+    "name": "Ruídos e Ondas Sonoras"
+  },
+  {
+    "parent": "Física",
+    "name": "Óptica Geométrica"
+  },
+  {
+    "parent": "Física",
+    "name": "Fenômenos Ondulatórios"
+  },
+  {
+    "parent": "Física",
+    "name": "Teoria da Relatividade"
+  },
+  {
+    "parent": "Física",
+    "name": "Física Nuclear"
+  },
+  {
+    "parent": "Física",
+    "name": "Energia Nuclear"
+  },
+  {
+    "parent": "Física",
+    "name": "Raios-X e Radioatividade"
+  },
+  {
+    "parent": "Física",
+    "name": "Modelos Atômicos"
+  },
+  {
+    "parent": "Física",
+    "name": "Física Experimental"
+  },
+  {
+    "parent": "Física",
+    "name": "Instrumentação em Física"
+  },
+  {
+    "name": "História"
+  },
+  {
+    "parent": "História",
+    "name": "Brasil Colônia"
+  },
+  {
+    "parent": "História",
+    "name": "Brasil Império"
+  },
+  {
+    "parent": "História",
+    "name": "Primeira República"
+  },
+  {
+    "parent": "História",
+    "name": "Era Vargas"
+  },
+  {
+    "parent": "História",
+    "name": "Segunda Guerra Mundial"
+  },
+  {
+    "parent": "História",
+    "name": "Guerra Fria"
+  },
+  {
+    "parent": "História",
+    "name": "Ditadura Militar"
+  },
+  {
+    "parent": "História",
+    "name": "Redemocratização do Brasil"
+  },
+  {
+    "parent": "História",
+    "name": "Globalização"
+  },
+  {
+    "parent": "História",
+    "name": "Descobrimento do Brasil"
+  },
+  {
+    "parent": "História",
+    "name": "Período Regencial"
+  },
+  {
+    "parent": "História",
+    "name": "Proclamação da República"
+  },
+  {
+    "parent": "História",
+    "name": "Revolução Industrial"
+  },
+  {
+    "parent": "História",
+    "name": "Revolução Francesa"
+  },
+  {
+    "parent": "História",
+    "name": "Independência das Américas"
+  },
+  {
+    "parent": "História",
+    "name": "Idade Média"
+  },
+  {
+    "parent": "História",
+    "name": "Renascimento Cultural"
+  },
+  {
+    "parent": "História",
+    "name": "Reforma Protestante"
+  },
+  {
+    "parent": "História",
+    "name": "Iluminismo"
+  },
+  {
+    "parent": "História",
+    "name": "Revolução Industrial"
+  },
+  {
+    "parent": "História",
+    "name": "Imperialismo"
+  },
+  {
+    "parent": "História",
+    "name": "Revolução Russa"
+  },
+  {
+    "parent": "História",
+    "name": "Nazismo e Fascismo"
+  },
+  {
+    "parent": "História",
+    "name": "Crise de 1929"
+  },
+  {
+    "parent": "História",
+    "name": "Guerra do Vietnã"
+  },
+  {
+    "parent": "História",
+    "name": "Descolonização da África e Ásia"
+  },
+  {
+    "parent": "História",
+    "name": "Guerra Fria"
+  },
+  {
+    "parent": "História",
+    "name": "Conferências Internacionais"
+  },
+  {
+    "parent": "História",
+    "name": "Globalização"
+  }
+]
