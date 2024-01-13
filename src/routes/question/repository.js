@@ -2,17 +2,18 @@ const { db, errors, caseConverter } = require('../../shared')
 
 const { InsertQuestionError } = errors.system
 
-const insertQuestion = async (question, alternatives) => {
-    const { statement, institution, year, examName } = question
+const insertQuestion = async (question) => {
+    const { statement, institution, year, examName, alternatives, subjects = [] } = question
     const result = await db.mysql.query(
-        'CALL `insert_question`(?, ?, ?, ?, ?, ?);',
+        'CALL `insert_question`(?, ?, ?, ?, ?, ?, ?);',
         [
             statement,
             institution,
             year,
             examName,
             question.enum,
-            JSON.stringify(alternatives)
+            JSON.stringify(alternatives),
+            JSON.stringify(subjects)
         ]
     )
 
@@ -24,8 +25,9 @@ const insertQuestion = async (question, alternatives) => {
         item.correct = item.correct === 1
         return item
     })
+    const resultSubjects = result?.at(2) ?? [];
 
-    return { ...resultQuestion, alternatives: resultAlternatives }
+    return { ...resultQuestion, alternatives: resultAlternatives, subjects: resultSubjects }
 }
 
 const searchQuestion = async search => {

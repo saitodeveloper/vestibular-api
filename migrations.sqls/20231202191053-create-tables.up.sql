@@ -118,26 +118,28 @@ CREATE TABLE `activities` (
 );
 
 CREATE TABLE `subjects` (
-  `id` INT NOT NULL,
-  `name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`)
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(45) NOT NULL,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `questions_subjects` (
-  `id` INT NOT NULL,
-  `id_subject` INT NOT NULL,
-  `id_question` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_question_to_subjects_idx` (`id_subject` ASC) VISIBLE,
-  INDEX `fk_subject_to_questions_idx` (`id_question` ASC) VISIBLE,
-  UNIQUE INDEX `unique_question_subject` (`id_subject` ASC, `id_question` ASC) VISIBLE,
-  CONSTRAINT `fk_question_to_subjects`
-    FOREIGN KEY (`id_subject`)
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `subject_id` INT NOT NULL,
+    `question_id` INT NOT NULL,
+    PRIMARY KEY (`id`),
+    INDEX `fk_question_to_subjects_idx` (`subject_id` ASC) VISIBLE,
+    INDEX `fk_subject_to_questions_idx` (`question_id` ASC) VISIBLE,
+    UNIQUE INDEX `unique_question_subject` (`subject_id` ASC, `question_id` ASC) VISIBLE,
+    CONSTRAINT `fk_question_to_subjects`
+    FOREIGN KEY (`subject_id`)
     REFERENCES `subjects` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_subject_to_questions`
-    FOREIGN KEY (`id_question`)
+    CONSTRAINT `fk_subject_to_questions`
+    FOREIGN KEY (`question_id`)
     REFERENCES `questions` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION

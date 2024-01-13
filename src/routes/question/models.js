@@ -1,7 +1,7 @@
 const joi = require('joi')
 const { models } = require('../../shared')
 
-const { QuestionSchema, AlternativeSchema, PaginateObject } = models
+const { QuestionSchema, AlternativeSchema, PaginateObject, SubjectSchema } = models
 
 const QuestionPostBody = joi.object({
     statement: QuestionSchema.statement.required(),
@@ -17,7 +17,8 @@ const QuestionPostBody = joi.object({
                 statement: AlternativeSchema.statement.required()
             })
         )
-        .required()
+        .required(),
+    subjects: joi.array().items(SubjectSchema.id).max(40)
 })
 
 const QuestionGetQuery = joi.object({

@@ -89,6 +89,11 @@ const ActivitySchema = {
     ...BaseSchema
 }
 
+const SubjectSchema = {
+    name: joi.string().min(1).max(45),
+    ...BaseSchema
+}
+
 /** Global objects */
 const PaginateObject = {
     page: joi
@@ -109,5 +114,6 @@ module.exports = {
     QuestionSchema,
     AlternativeSchema,
     ActivitySchema,
-    PaginateObject
+    PaginateObject,
+    SubjectSchema
 }
