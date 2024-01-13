@@ -117,3 +117,28 @@ CREATE TABLE `activities` (
     ON UPDATE CASCADE
 );
 
+CREATE TABLE `subjects` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `questions_subjects` (
+  `id` INT NOT NULL,
+  `id_subject` INT NOT NULL,
+  `id_question` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_question_to_subjects_idx` (`id_subject` ASC) VISIBLE,
+  INDEX `fk_subject_to_questions_idx` (`id_question` ASC) VISIBLE,
+  UNIQUE INDEX `unique_question_subject` (`id_subject` ASC, `id_question` ASC) VISIBLE,
+  CONSTRAINT `fk_question_to_subjects`
+    FOREIGN KEY (`id_subject`)
+    REFERENCES `subjects` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_subject_to_questions`
+    FOREIGN KEY (`id_question`)
+    REFERENCES `questions` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+);
