@@ -9,6 +9,7 @@ dotenv.config()
 const auth = require('./routes/auth/api')
 const question = require('./routes/question/api')
 const activity = require('./routes/activity/api')
+const subject = require('./routes/subject/api')
 
 const app = express()
 
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/v1/auth', auth)
 app.use('/v1/question', question)
 app.use('/v1/activity', activity)
+app.use('/v1/subject', subject)
 
 /** Not found Handler */
 app.use((_req, _res, next) => {
