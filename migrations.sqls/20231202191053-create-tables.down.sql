@@ -1,3 +1,5 @@
+DROP TABLE `questions_subjects`;
+DROP TABLE `subjects`;
 DROP TABLE `activities`;
 DROP TABLE  `alternatives`;
 DROP TABLE `questions`;
