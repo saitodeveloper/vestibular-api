@@ -91,6 +91,7 @@ const ActivitySchema = {
 
 const SubjectSchema = {
     name: joi.string().min(1).max(45),
+    parent: joi.string().min(1).max(45),
     ...BaseSchema
 }
 
