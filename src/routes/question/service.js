@@ -1,9 +1,6 @@
 const repository = require('./repository')
 
-const createQuestion = async question => {
-    const { alternatives } = question
-    return await repository.insertQuestion(question, alternatives)
-}
+const createQuestion = async question => await repository.insertQuestion(question)
 
 const searchQuestion = async searchParam => {
     const { limit, page } = searchParam
