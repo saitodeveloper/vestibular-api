@@ -7,11 +7,11 @@ const { mapKeys, camelCase } = require('lodash')
 
 const { AuthError } = errors.system
 
-const createUser = async (user, auth, device) => {
+const createUser = async (user, auth, device, role = 'user') => {
     const { password, email } = auth
     const hash = await crypt.hashSaltEncode(password)
     const userRepositoryInput = {
-        role: 'user',
+        role,
         ...user
     }
     const authRepositoryInput = {

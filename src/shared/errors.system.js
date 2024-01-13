@@ -11,7 +11,8 @@ const errorMessages = {
     603: 'unable to cerate question',
     604: 'unable to create activity',
     605: 'unprocessable token',
-    606: 'unable to check device'
+    606: 'unable to check device',
+    607: 'unable to insert subjects'
 }
 const context = 'system'
 
@@ -31,7 +32,7 @@ class AuthError extends UnauthorizedError {
     }
 }
 
-class InsertUserAuthError extends UnprocessableEntityError {
+class InsertUserAuthError extends InternalError {
     constructor(message = errorMessages[602]) {
         super(message)
         this.systemCode = 602
@@ -39,7 +40,7 @@ class InsertUserAuthError extends UnprocessableEntityError {
     }
 }
 
-class InsertQuestionError extends UnprocessableEntityError {
+class InsertQuestionError extends InternalError {
     constructor(message = errorMessages[603]) {
         super(message)
         this.systemCode = 603
@@ -71,6 +72,14 @@ class InvalidDevice extends UnprocessableEntityError {
     }
 }
 
+class InsertSubjectsError extends InternalError {
+    constructor(message = errorMessages[607]) {
+        super(message)
+        this.systemCode = 607
+        this.systemCodeContext = `${context}:607`
+    }
+}
+
 module.exports = {
     AuthError,
     DbError,
@@ -78,5 +87,6 @@ module.exports = {
     InsertQuestionError,
     InsertActivityError,
     UnparsableToken,
-    InvalidDevice
+    InvalidDevice,
+    InsertSubjectsError
 }

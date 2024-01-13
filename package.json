@@ -5,6 +5,7 @@
         "migrate": "db-migrate",
         "init:algolia": "node ./scripts/index.algolia.js",
         "init:dotenv": "node ./scripts/init.dotenv.js",
+        "init:seed": "node ./scripts/init.seeds.js",
         "dev": "nodemon ./src/server.js",
         "start": "node ./src/server.js"
     },
