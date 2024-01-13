@@ -11,7 +11,7 @@ const insertSubjects = async (subjects) => {
         throw new InsertSubjectsError()
 
 
-    return { subjectInserted: result.affectedRows }
+    return { subjectsInserted: result.affectedRows }
 }
 
 module.exports = { insertSubjects }
