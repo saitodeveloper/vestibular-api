@@ -14,7 +14,7 @@ const chain = {
         command: `cp ${targetFilePath} ${envRootPath}`
     },
     win32: {
-        command: `TYPE ${targetFilePath} > ${envRootPath}`
+        command: `TYPE "${targetFilePath}" > "${envRootPath}"`
     }
 }
 
