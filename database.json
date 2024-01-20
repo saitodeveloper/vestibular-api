@@ -7,5 +7,13 @@
         "user": { "ENV": "MYSQL_USER" },
         "password": { "ENV": "MYSQL_PASSWORD" },
         "multipleStatements": true
+    },
+    "test": {
+        "driver": "mysql",
+        "host": { "ENV": "MYSQL_HOST" },
+        "database": "vestibular_db_test",
+        "user": { "ENV": "MYSQL_USER" },
+        "password": { "ENV": "MYSQL_PASSWORD" },
+        "multipleStatements": true
     }
 }

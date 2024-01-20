@@ -49,7 +49,7 @@ const loginUser = async (identity, device) => {
 }
 
 const cacheOtpKey = async (key, password, iv) => {
-    const client = db.redis.instance()
+    const client = await db.redis.instance()
     await client.connect()
     await client.setEx(`otp:${key}`, 10, `${password}.${iv}`)
     await client.quit()
