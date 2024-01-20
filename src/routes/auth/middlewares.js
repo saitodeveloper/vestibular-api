@@ -49,7 +49,7 @@ const role = list => (req, _res, next) => {
 const decryptDevice = async (req, _res, next) => {
     try {
         const { device: encryptDevice, otpkey } = req.headers
-        const client = db.redis.instance()
+        const client = await db.redis.instance()
         await client.connect()
         const password = await client.get(`otp:${otpkey}`)
         const deviceJSON = decryptAES(encryptDevice, password)

@@ -60,6 +60,11 @@ const searchQuestion = async search => {
                 alternativeStatement,
                 alternativeCreatedAt,
                 alternativeUpdatedAt,
+                subjectId,
+                subjectCreatedAt,
+                subjectUpdatedAt,
+                parent,
+                name,
                 correct
             } = question
             if (!reducer[questionId]) {
@@ -71,7 +76,8 @@ const searchQuestion = async search => {
                     institution,
                     year,
                     enum: question.enum,
-                    alternatives: []
+                    alternatives: [],
+                    subjects: []
                 }
             }
 
@@ -81,6 +87,14 @@ const searchQuestion = async search => {
                 createdAt: alternativeCreatedAt,
                 updatedAt: alternativeUpdatedAt,
                 correct: correct === 1
+            })
+
+            reducer[questionId].subjects.push({
+                id: subjectId,
+                parent,
+                name,
+                createdAt: subjectCreatedAt,
+                updatedAt: subjectUpdatedAt
             })
 
             return reducer
