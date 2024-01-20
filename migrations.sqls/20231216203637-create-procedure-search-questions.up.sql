@@ -56,7 +56,11 @@ BEGIN
         a.`statement` AS `alternativeStatement`,
         a.`created_at` AS `alternativeCreatedAt`,
         a.`updated_at` AS `alternativeUpdatedAt`,
-        a.*
+        a.*,
+        s.`id` AS `subjectId`,
+        s.`created_at` AS `subjectCreatedAt`,
+        s.`updated_at` AS `subjectUpdatedAt`,
+        s.*
     FROM (
         SELECT
             q.*
@@ -84,5 +88,9 @@ BEGIN
         LIMIT `_limit` OFFSET `_offset`
     ) qtemp 
     INNER JOIN
-        `alternatives` a ON a.`question_id` = qtemp.`id`;
+        `alternatives` a ON a.`question_id` = qtemp.`id`
+    INNER JOIN 
+        `questions_subjects` qs ON qs.question_id = qtemp.`id`
+    INNER JOIN
+        `subjects` s ON qs.`subject_id` = s.`id`;
 END

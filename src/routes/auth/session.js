@@ -10,7 +10,7 @@ const create = async (
     authToken,
     userToken
 ) => {
-    const client = redis.instance()
+    const client = await redis.instance()
     await client.connect()
     const exists = await client.hGet(
         `user:${userId}:tokens`,
@@ -31,7 +31,7 @@ const create = async (
 }
 
 const clean = async authToken => {
-    const client = redis.instance()
+    const client = await redis.instance()
     await client.connect()
     const userToken = await client.get(`token:${authToken}`)
 
@@ -49,7 +49,7 @@ const clean = async authToken => {
 }
 
 const find = async (context, key) => {
-    const client = redis.instance()
+    const client = await redis.instance()
     await client.connect()
     const value = await client.get(`${context}:${key}`)
     await client.quit()
