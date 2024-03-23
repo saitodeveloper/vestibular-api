@@ -16,7 +16,7 @@ CREATE TABLE `devices` (
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `user_id` INT NULL,
     PRIMARY KEY (`id`),
-    UNIQUE INDEX `device_serial_user_id_unique` (`serial` ASC, `user_id` ASC) VISIBLE,
+    UNIQUE INDEX `device_serial_user_id_unique` (`serial` ASC, `user_id` ASC, `type` ASC) VISIBLE,
     INDEX `device_user_id_fk_idx` USING BTREE (`user_id`) VISIBLE,
     CONSTRAINT `user_id_fk`
     FOREIGN KEY (`user_id`)

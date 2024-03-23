@@ -50,7 +50,7 @@ BEGIN
     FROM 
         `devices` 
     WHERE 
-        `serial` = `_device_serial` AND `user_id` = `_test_user_id`;
+        `serial` = `_device_serial` AND `user_id` = `_test_user_id` AND `type` = `_device_type`;
         
     IF `_found_device_id` IS NULL THEN
         INSERT INTO
