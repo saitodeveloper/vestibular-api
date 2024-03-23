@@ -1,14 +1,14 @@
 const express = require('express')
 const router = express.Router()
 const { decryptDevice } = require('../middlewares')
-const { routerResolver } = require('../../../shared')
+const { routerResolver, middlewares } = require('../../../shared')
 const { celebrate: schemaValidator } = require('celebrate')
 const { AuthUserPostBody, LoginPostBody, LoginPostHeader } = require('./models')
 const service = require('./service')
 
 router.post(
     '/login',
-    schemaValidator({ body: LoginPostBody, headers: LoginPostHeader }),
+    middlewares.validate({ body: LoginPostBody, headers: LoginPostHeader }),
     decryptDevice,
     routerResolver.safe(async (req, res) => {
         const auth = req.body

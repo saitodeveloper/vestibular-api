@@ -1,5 +1,7 @@
 const express = require('express')
 const { errors } = require('celebrate')
+const cookieParser = require('cookie-parser')
+const cors = require('cors')
 const { NotFoundError } = require('./shared/errors.http')
 
 const dotenv = require('dotenv')
@@ -12,7 +14,16 @@ const activity = require('./routes/activity/api')
 const subject = require('./routes/subject/api')
 
 const app = express()
+const corsOptions = {
+    credentials: true,
+    optionsSuccessStatus: 200,
+    origin: (_, callback) => {
+        callback(null, { origin: true })
+    }
+}
 
+app.use(cors(corsOptions))
+app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
