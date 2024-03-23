@@ -1,8 +1,8 @@
 CREATE PROCEDURE `login_user` (
     IN `_identity_value` VARCHAR(45),
     IN `_plain_password` TEXT,
-    IN `_device_type` VARCHAR(45),
-    IN `_device_serial` VARCHAR(90)
+    IN `_device_type` VARCHAR(256),
+    IN `_device_serial` VARCHAR(256)
 )
 BEGIN
     DECLARE `_test_user_id` INT;

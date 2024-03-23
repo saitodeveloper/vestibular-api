@@ -16,6 +16,8 @@
         "@joi/date": "^2.1.0",
         "algoliasearch": "^4.20.0",
         "celebrate": "^15.0.3",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
         "db-migrate": "^0.11.14",
         "db-migrate-mysql": "^2.3.2",
         "dotenv": "^16.3.1",
