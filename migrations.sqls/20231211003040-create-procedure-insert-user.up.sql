@@ -5,8 +5,8 @@ CREATE PROCEDURE `insert_user` (
     IN `_identity_type` VARCHAR(45),
     IN `_identity_value` VARCHAR(45),
     IN `_oauth_hash` VARCHAR(160),
-    IN `_device_type` VARCHAR(45),
-    IN `_device_serial` VARCHAR(90)
+    IN `_device_type` VARCHAR(256),
+    IN `_device_serial` VARCHAR(256)
 )
 BEGIN
     DECLARE `_inserted_user_id` INT;
