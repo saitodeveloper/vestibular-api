@@ -13,5 +13,6 @@ module.exports = {
     env: require('./environment'),
     token: require('./token'),
     caseConverter: require('./case.converter'),
-    middlewares: require('./middlewares')
+    middlewares: require('./middlewares'),
+    supabase: require('./supabase')
 }

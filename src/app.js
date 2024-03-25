@@ -12,6 +12,7 @@ const auth = require('./routes/auth/api')
 const question = require('./routes/question/api')
 const activity = require('./routes/activity/api')
 const subject = require('./routes/subject/api')
+const media = require('./routes/media/api')
 
 const app = express()
 const corsOptions = {
@@ -32,6 +33,7 @@ app.use('/v1/auth', auth)
 app.use('/v1/question', question)
 app.use('/v1/activity', activity)
 app.use('/v1/subject', subject)
+app.use('/v1/media', media)
 
 /** Not found Handler */
 app.use((_req, _res, next) => {

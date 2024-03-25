@@ -7,7 +7,8 @@ const errorMessages = {
     417: 'expectation failed',
     422: 'unprocessable entity',
     500: 'internal server error occured',
-    502: 'bad gateway'
+    502: 'bad gateway',
+    503: 'service unavailable'
 }
 
 class BadRequestError extends Error {
@@ -73,6 +74,13 @@ class BadGateway extends Error {
     }
 }
 
+class ServiceUnavailable extends Error {
+    constructor(message = errorMessages[503]) {
+        super(message)
+        this.status = 503
+    }
+}
+
 module.exports = {
     BadGateway,
     BadRequestError,
@@ -82,5 +90,6 @@ module.exports = {
     InternalError,
     NotFoundError,
     UnauthorizedError,
-    UnprocessableEntityError
+    UnprocessableEntityError,
+    ServiceUnavailable
 }

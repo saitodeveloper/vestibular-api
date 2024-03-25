@@ -22,7 +22,8 @@ const getPayload = token => {
     try {
         const parts = token.split('.')
         const base64 = parts[1]
-        return JSON.parse(base64)
+        const json = Buffer.from(base64, 'base64').toString()
+        return JSON.parse(json)
     } catch {
         throw new Error('invalid bearer token')
     }
