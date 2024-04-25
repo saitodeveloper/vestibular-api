@@ -42,11 +42,15 @@ app.use((_req, _res, next) => {
 
 app.use(errors())
 
-app.use(
-    ({ message, systemCode, systemCodeContext, status }, _req, res, _next) => {
-        const errorDto = { message, systemCode, systemCodeContext }
-        return res.status(status || 500).json(errorDto)
+app.use((error, _req, res, _next) => {
+    const { message, systemCode, systemCodeContext, status, stack } = error
+    const errorDto = {
+        message,
+        systemCode,
+        systemCodeContext
     }
-)
+    console.error(message, stack)
+    return res.status(status || 500).json(errorDto)
+})
 
 module.exports = app

@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
     mysql:
         image: mysql:latest
@@ -18,19 +16,16 @@ services:
             - 6379:$REDIS_PORT
         volumes:
             - redis_data:/data
-    minio:
-        image: minio/minio:latest
-        volumes:
-            - minio_data:/data
+    localstack:
+        image: localstack/localstack
         ports:
-            - '9000:9000'
+            - '4566:4566'
+            - '4572:4572'
         environment:
-            MINIO_ROOT_USER: $AWS_S3_API_KEY_ID
-            MINIO_ROOT_PASSWORD: $AWS_S3_API_SECRET
-            MINIO_DEFAULT_BUCKETS: $AWS_S3_BUCKET_NAME
-            AWS_DEFAULT_REGION: $AWS_S3_REGION
-        command: server /data
+            - SERVICES=s3
+            - DEFAULT_REGION=us-east-1
+            - DATA_DIR=/tmp/localstack/data
 volumes:
     mysql_data:
     redis_data:
-    minio_data:
+    localstack_data:

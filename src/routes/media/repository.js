@@ -1,38 +1,21 @@
-const { supabase, errors } = require('../../shared')
+const env = require('../../shared/environment')
+const { service } = require('../../shared')
 
-const { UploadFileError, ThirdPartyError } = errors.system
+const ENV = env.getString('NODE_ENV', 'local')
+const { aws, supabase } = service.storage
 
 const uploadFile = async (filePath, uploadPath, mimetype) => {
-    const { client, defaultBucketName } = supabase
-    const fileBuffer = require('fs').readFileSync(filePath)
-    const { error } = await client.storage
-        .from(defaultBucketName)
-        .upload(uploadPath, fileBuffer, {
-            contentType: mimetype
-        })
+    const result =
+        ENV === 'local'
+            ? await aws.uploadFile(filePath, uploadPath, mimetype)
+            : await supabase.uploadFile(filePath, uploadPath, mimetype)
 
-    if (error) throw new UploadFileError()
+    return result
 }
 
-const createBucket = async () => {
-    const { client, defaultBucketName } = supabase
-    const { error } = await client.storage.createBucket(defaultBucketName, {
-        public: true
-    })
-
-    if (error) throw new ThirdPartyError()
+module.exports = {
+    uploadFile,
+    createBucket: ENV === 'local' ? aws.createBucket : supabase.createBucket,
+    checkBucketExists:
+        ENV === 'local' ? aws.checkBucketExists : supabase.checkBucketExists
 }
-
-const checkBucketExists = async () => {
-    const { client, defaultBucketName } = supabase
-    const { error } = await client.storage.getBucket(defaultBucketName)
-
-    /** Not found */
-    if (error?.status === 400) return false
-
-    if (error) throw new ThirdPartyError()
-
-    return true
-}
-
-module.exports = { uploadFile, createBucket, checkBucketExists }
