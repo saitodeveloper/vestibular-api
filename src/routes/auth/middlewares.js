@@ -6,14 +6,18 @@ const { ForbidenError, UnauthorizedError } = errors.http
 const { UnparsableToken, InvalidDevice } = errors.system
 
 const decodeAuth = async (req, _res, next) => {
-    if (!req.context) req.context = {}
-    if (!req.headers.authorization) return next()
+    const { authorization: headerAuth } = req.headers
+    const { Authorization: cookieAuth } = req.cookies
+    let authorization = headerAuth || cookieAuth
+
+    if (!authorization) return next()
 
     try {
-        const authToken = token.getBearerToken(req.headers.authorization)
+        const authToken = token.getBearerToken(authorization)
         const userToken = await session.find('token', authToken)
         const decoded = token.getPayload(userToken)
         req.context.auth = decoded
+        if (!req.context) req.context = {}
         next()
     } catch {
         next(new UnparsableToken())

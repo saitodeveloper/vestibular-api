@@ -5,7 +5,7 @@
         "host": { "ENV": "MYSQL_HOST" },
         "database": { "ENV": "MYSQL_DATABASE" },
         "user": { "ENV": "MYSQL_USER" },
-        "password": { "ENV": "MYSQL_PASSWORD" },
+        "password": { "ENV": "MYSQL_ROOT_PASSWORD" },
         "multipleStatements": true
     },
     "test": {
@@ -13,7 +13,7 @@
         "host": { "ENV": "MYSQL_HOST" },
         "database": "vestibular_db_test",
         "user": { "ENV": "MYSQL_USER" },
-        "password": { "ENV": "MYSQL_PASSWORD" },
+        "password": { "ENV": "MYSQL_ROOT_PASSWORD" },
         "multipleStatements": true
     }
 }

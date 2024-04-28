@@ -1,3 +1,5 @@
+const env = require('./environment')
+
 module.exports = {
     models: require('./models'),
     routerResolver: require('./routeResolver'),
@@ -13,5 +15,15 @@ module.exports = {
     env: require('./environment'),
     token: require('./token'),
     caseConverter: require('./case.converter'),
-    middlewares: require('./middlewares')
+    middlewares: require('./middlewares'),
+    logger: {
+        local: require('./local.logger')
+    },
+    service: {
+        storage: {
+            supabase: require('./supabase'),
+            aws: require('./aws'),
+            defaultBucketName: env.getString('SUPABASE_BUCKET_NAME')
+        }
+    }
 }
