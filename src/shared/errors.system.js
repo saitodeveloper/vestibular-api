@@ -1,7 +1,9 @@
 const {
+    BadRequestError,
     InternalError,
     UnauthorizedError,
-    UnprocessableEntityError
+    UnprocessableEntityError,
+    ServiceUnavailable
 } = require('./errors.http')
 
 const errorMessages = {
@@ -12,7 +14,11 @@ const errorMessages = {
     604: 'unable to create activity',
     605: 'unprocessable token',
     606: 'unable to check device',
-    607: 'unable to insert subjects'
+    607: 'unable to insert subjects',
+    608: 'unable to upload the file',
+    609: 'unable reach third party service error',
+    610: 'invalid file mimetype',
+    611: 'invalid file size'
 }
 const context = 'system'
 
@@ -80,6 +86,38 @@ class InsertSubjectsError extends InternalError {
     }
 }
 
+class UploadFileError extends ServiceUnavailable {
+    constructor(message = errorMessages[608]) {
+        super(message)
+        this.systemCode = 608
+        this.systemCodeContext = `${context}:608`
+    }
+}
+
+class ThirdPartyError extends ServiceUnavailable {
+    constructor(message = errorMessages[609]) {
+        super(message)
+        this.systemCode = 609
+        this.systemCodeContext = `${context}:609`
+    }
+}
+
+class FileMimetypeError extends BadRequestError {
+    constructor(message = errorMessages[610]) {
+        super(message)
+        this.systemCode = 610
+        this.systemCodeContext = `${context}:610`
+    }
+}
+
+class FileSizeError extends BadRequestError {
+    constructor(message = errorMessages[611]) {
+        super(message)
+        this.systemCode = 611
+        this.systemCodeContext = `${context}:611`
+    }
+}
+
 module.exports = {
     AuthError,
     DbError,
@@ -88,5 +126,9 @@ module.exports = {
     InsertActivityError,
     UnparsableToken,
     InvalidDevice,
-    InsertSubjectsError
+    InsertSubjectsError,
+    UploadFileError,
+    ThirdPartyError,
+    FileMimetypeError,
+    FileSizeError
 }

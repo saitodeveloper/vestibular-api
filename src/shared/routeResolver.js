@@ -1,3 +1,5 @@
+const localLogger = require('./local.logger')
+
 /**
  * Router handler callback
  * @callback handlerCallback
@@ -16,6 +18,7 @@ const safe = handler => {
     return async (req, res, next) => {
         try {
             await handler(req, res)
+            localLogger.requestInfo(req)
         } catch (error) {
             next(error)
         }
