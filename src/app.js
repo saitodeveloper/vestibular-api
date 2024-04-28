@@ -3,6 +3,8 @@ const { errors } = require('celebrate')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const { NotFoundError } = require('./shared/errors.http')
+const { logger } = require('./shared')
+const { v4: uuidv4 } = require('uuid')
 
 const dotenv = require('dotenv')
 
@@ -23,6 +25,14 @@ const corsOptions = {
     }
 }
 
+/** Collect request start timestamp */
+app.use((req, _, next) => {
+    if (!req.context) req.context = {}
+    req.context.start = performance.now()
+    req.context.uuid = uuidv4()
+    next()
+})
+
 app.use(cors(corsOptions))
 app.use(cookieParser())
 app.use(express.json())
@@ -42,14 +52,17 @@ app.use((_req, _res, next) => {
 
 app.use(errors())
 
-app.use((error, _req, res, _next) => {
-    const { message, systemCode, systemCodeContext, status, stack } = error
+app.use((error, req, res, _next) => {
+    const { message, systemCode, systemCodeContext, status } = error
     const errorDto = {
         message,
         systemCode,
-        systemCodeContext
+        systemCodeContext,
+        requestUUID: req.context.uuid
     }
-    console.error(message, stack)
+
+    logger.local.requestError(req, error)
+
     return res.status(status || 500).json(errorDto)
 })
 

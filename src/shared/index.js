@@ -16,6 +16,9 @@ module.exports = {
     token: require('./token'),
     caseConverter: require('./case.converter'),
     middlewares: require('./middlewares'),
+    logger: {
+        local: require('./local.logger')
+    },
     service: {
         storage: {
             supabase: require('./supabase'),
