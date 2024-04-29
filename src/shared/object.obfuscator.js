@@ -1,4 +1,4 @@
-const piiKeyList = ['password']
+const piiKeyList = ['password', 'serial']
 const partialObfuscate = []
 
 const obfuscatePII = obj => {
