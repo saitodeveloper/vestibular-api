@@ -25,5 +25,6 @@ module.exports = {
             aws: require('./aws'),
             defaultBucketName: env.getString('SUPABASE_BUCKET_NAME')
         }
-    }
+    },
+    obfuscator: require('./object.obfuscator')
 }
