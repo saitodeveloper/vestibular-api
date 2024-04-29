@@ -13,18 +13,12 @@ const LoginPostBody = joi.object({
     password: joi.string().min(6).max(20).required()
 })
 
-const DevicePostBody = joi.object({
-    type: DeviceSchema.type.required(),
-    serial: DeviceSchema.serial.required()
-})
-
 const AuthUserPostBody = joi.object({
     auth: LoginPostBody,
-    device: DevicePostBody,
     user: UserPostBody
 })
 
-const LoginPostHeader = joi
+const DevicePostHeader = joi
     .object({
         device: joi.string().min(1).max(255),
         otpKey: joi.string().length(16)
@@ -34,5 +28,5 @@ const LoginPostHeader = joi
 module.exports = {
     LoginPostBody,
     AuthUserPostBody,
-    LoginPostHeader
+    DevicePostHeader
 }
