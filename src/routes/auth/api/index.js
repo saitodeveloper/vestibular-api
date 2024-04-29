@@ -3,12 +3,16 @@ const router = express.Router()
 const { decryptDevice } = require('../middlewares')
 const { routerResolver, middlewares } = require('../../../shared')
 const { celebrate: schemaValidator } = require('celebrate')
-const { AuthUserPostBody, LoginPostBody, LoginPostHeader } = require('./models')
+const {
+    AuthUserPostBody,
+    LoginPostBody,
+    DevicePostHeader
+} = require('./models')
 const service = require('./service')
 
 router.post(
     '/login',
-    middlewares.validate({ body: LoginPostBody, headers: LoginPostHeader }),
+    middlewares.validate({ body: LoginPostBody, headers: DevicePostHeader }),
     decryptDevice,
     routerResolver.safe(async (req, res) => {
         const auth = req.body
@@ -20,9 +24,11 @@ router.post(
 
 router.post(
     '/user',
-    schemaValidator({ body: AuthUserPostBody }),
+    schemaValidator({ body: AuthUserPostBody, headers: DevicePostHeader }),
+    decryptDevice,
     routerResolver.safe(async (req, res) => {
-        const { user, auth, device } = req.body
+        const { device } = req.context
+        const { user, auth } = req.body
         const respositoryUser = await service.createUser(user, auth, device)
         return res.status(201).json(respositoryUser)
     })
