@@ -28,7 +28,7 @@ const validate = schemaDict => (req, _res, next) => {
     for (let [objectKey, schema] of Object.entries(schemaDict)) {
         const target = req[objectKey]
         const result = schema.validate(target, { abortEarly: false })
-        const { error: bodyError } = result
+        const { error: bodyError, value } = result
 
         if (bodyError && bodyError.details) {
             const message = `${objectKey}: ${bodyError.details
@@ -36,6 +36,8 @@ const validate = schemaDict => (req, _res, next) => {
                 .join(', ')}`
             return next(new BadRequestError(message))
         }
+
+        req[objectKey] = value
     }
 
     return next()
