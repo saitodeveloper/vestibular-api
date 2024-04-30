@@ -1,11 +1,18 @@
 const joi = require('joi')
 const { models } = require('../../shared')
 
-const { SubjectSchema } = models
+const { SubjectSchema, PaginateObject } = models
 
-const SubjectListBodyPost = joi.array().items(joi.object({
+const SubjectListBodyPost = joi.array().items(
+    joi.object({
+        name: SubjectSchema.name.required(),
+        parent: SubjectSchema.parent
+    })
+)
+
+const SubjectQueryGet = joi.object({
     name: SubjectSchema.name.required(),
-    parent: SubjectSchema.parent
-}))
+    ...PaginateObject
+})
 
-module.exports = { SubjectListBodyPost }
+module.exports = { SubjectListBodyPost, SubjectQueryGet }
