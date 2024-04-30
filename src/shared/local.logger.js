@@ -16,12 +16,12 @@ const requestInfo = req => {
     console.log(green, requestDetails, ending)
 }
 
-const requestError = (req, error) => {
+const requestError = (req, error, httpStatus) => {
     const { method, originalUrl, context, body } = req
     const { stack } = error
     const { red, ending } = ansiColors
     const deltaTime = performance.now() - context.start
-    const requestDetails = `[${context.uuid}] ${method} ${originalUrl} ${deltaTime} ms`
+    const requestDetails = `[${context.uuid}] ${method} ${originalUrl} ${deltaTime} ms (${httpStatus})`
     const obfuscateBody = obfuscator.obfuscatePII(body)
     const errorMessage = `${stack}
     Response Body: ${JSON.stringify(error)}

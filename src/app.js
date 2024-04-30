@@ -54,6 +54,7 @@ app.use(errors())
 
 app.use((error, req, res, _next) => {
     const { message, systemCode, systemCodeContext, status } = error
+    const httpStatus = status || 500
     const errorDto = {
         message,
         systemCode,
@@ -61,9 +62,9 @@ app.use((error, req, res, _next) => {
         requestUUID: req.context.uuid
     }
 
-    logger.local.requestError(req, error)
+    logger.local.requestError(req, error, httpStatus)
 
-    return res.status(status || 500).json(errorDto)
+    return res.status(httpStatus).json(errorDto)
 })
 
 module.exports = app
