@@ -6,7 +6,7 @@
         "init:algolia": "node ./scripts/index.algolia.js",
         "init:dotenv": "node ./scripts/init.dotenv.js",
         "init:seed": "node ./scripts/init.seeds.js",
-        "local": "nodemon --env-file=.env ./src/server.js",
+        "local": "nodemon ./src/server.js",
         "start": "node ./src/server.js",
         "test": "jest --forceExit"
     },
