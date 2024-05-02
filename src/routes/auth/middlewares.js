@@ -16,25 +16,45 @@ const decodeAuth = async (req, _res, next) => {
         const authToken = token.getBearerToken(authorization)
         const userToken = await session.find('token', authToken)
         const decoded = token.getPayload(userToken)
-        req.context.auth = decoded
         if (!req.context) req.context = {}
+        req.context.auth = decoded
         next()
     } catch {
         next(new UnparsableToken())
     }
 }
 
+const refreshAuthorized = (originalUrl, authToken) => {
+    try {
+        token.verify(authToken)
+        return true
+    } catch (error) {
+        if (
+            error.name === 'TokenExpiredError' &&
+            originalUrl === '/v1/auth/refresh'
+        ) {
+            return false
+        } else throw error
+    }
+}
+
 const auth = async (req, _res, next) => {
     try {
-        const { authorization: headerAuth } = req.headers
-        const { Authorization: cookieAuth } = req.cookies
-        let authorization = headerAuth || cookieAuth
+        const { authorization: headerAuth, refresh } = req.headers
+        const { Authorization: cookieAuth, Refresh } = req.cookies
+        const authorization = headerAuth || cookieAuth
+        const refreshToken = refresh || Refresh
         const authToken = token.getBearerToken(authorization)
+
+        refreshAuthorized(req.originalUrl, authToken)
+
         const userToken = await session.find('token', authToken)
         const decoded = token.verify(userToken)
 
         if (!req.context) req.context = {}
+
         req.context.auth = decoded
+        req.context.tokens = { authToken, refreshToken }
 
         next()
     } catch (error) {

@@ -6,7 +6,7 @@ const insertActivity = async (activity, auth) => {
     const { alternativeId, questionId } = activity
     const { userId, deviceSerial, deviceId } = auth
     const result = await db.mysql.query(
-        'CALL `insert_activity`(?, ?, ?, ?, ?)',
+        'CALL `insert_activity`(?, ?, ?, ?, ?);',
         [alternativeId, userId, deviceId, deviceSerial, questionId]
     )
 
