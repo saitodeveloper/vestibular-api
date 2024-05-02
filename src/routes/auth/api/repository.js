@@ -1,37 +1,38 @@
 const { db, errors } = require('../../../shared')
 
-const { InsertUserAuthError } = errors.system
+const { InsertUserAuthError, DuplicateUserError } = errors.system
 
 const createUser = async (user, auth, device) => {
     const { firstName, lastName, role } = user
     const { hash, identity, type: authType } = auth
     const { serial, type: deviceType } = device
 
-    const result = await db.mysql.query(
-        'CALL `insert_user`(?, ?, ?, ?, ?, ?, ?, ?);',
-        [
-            firstName,
-            lastName,
-            role,
-            authType,
-            identity,
-            hash,
-            deviceType,
-            serial
-        ]
-    )
+    try {
+        const result = await db.mysql.query(
+            'CALL `insert_user`(?, ?, ?, ?, ?, ?, ?, ?);',
+            [
+                firstName,
+                lastName,
+                role,
+                authType,
+                identity,
+                hash,
+                deviceType,
+                serial
+            ]
+        )
+        const insertedUser = result?.at(0)?.at(0)
+        const insertedDevice = result?.at(1)?.at(0)
+        const insertedIdentity = result?.at(2)?.at(0)
 
-    if (!Array.isArray(result) && !result.affectedRows)
-        throw new InsertUserAuthError()
-
-    const insertedUser = result?.at(0)?.at(0)
-    const insertedDevice = result?.at(1)?.at(0)
-    const insertedIdentity = result?.at(2)?.at(0)
-
-    return {
-        user: insertedUser,
-        device: insertedDevice,
-        identity: insertedIdentity
+        return {
+            user: insertedUser,
+            device: insertedDevice,
+            identity: insertedIdentity
+        }
+    } catch (error) {
+        if (error.code === 'ER_DUP_ENTRY') throw new DuplicateUserError(error)
+        else throw new InsertUserAuthError()
     }
 }
 

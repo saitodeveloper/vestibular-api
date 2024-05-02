@@ -40,19 +40,11 @@ class AuthError extends UnauthorizedError {
 }
 
 class InsertUserAuthError extends InternalError {
-    constructor(message = errorMessages[602]) {
+    constructor(causedBy, message = errorMessages[602]) {
         super(message)
         this.systemCode = 602
         this.systemCodeContext = `${context}:602`
-    }
-}
-
-class DuplicateUserError extends InsertUserAuthError {
-    constructor(message = errorMessages[603], key) {
-        super(message)
-        this.systemCode = 603
-        this.systemCodeContext = `${context}:603`
-        this.key = key
+        this.causedBy = causedBy
     }
 }
 
@@ -125,6 +117,15 @@ class FileSizeError extends BadRequestError {
         super(message)
         this.systemCode = 611
         this.systemCodeContext = `${context}:611`
+    }
+}
+
+class DuplicateUserError extends InsertUserAuthError {
+    constructor(causedBy, message = errorMessages[612]) {
+        super(causedBy, message)
+        this.systemCode = 612
+        this.systemCodeContext = `${context}:612`
+        this.causedBy = causedBy
     }
 }
 
