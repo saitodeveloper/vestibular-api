@@ -8,7 +8,8 @@ const create = async (
     deviceName,
     deviceSerial,
     authToken,
-    userToken
+    userToken,
+    refreshToken
 ) => {
     const client = await redis.instance()
     await client.connect()
@@ -19,6 +20,7 @@ const create = async (
 
     if (exists) {
         await client.del(`token:${exists}`)
+        await client.del(`refresh:${exists}`)
     }
 
     await client.hSet(
@@ -27,6 +29,7 @@ const create = async (
         authToken
     )
     await client.set(`token:${authToken}`, userToken)
+    await client.set(`refresh:${authToken}`, refreshToken)
     await client.quit()
 }
 

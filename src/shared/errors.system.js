@@ -18,7 +18,8 @@ const errorMessages = {
     608: 'unable to upload the file',
     609: 'unable reach third party service error',
     610: 'invalid file mimetype',
-    611: 'invalid file size'
+    611: 'invalid file size',
+    612: 'duplicated user key'
 }
 const context = 'system'
 
@@ -39,10 +40,11 @@ class AuthError extends UnauthorizedError {
 }
 
 class InsertUserAuthError extends InternalError {
-    constructor(message = errorMessages[602]) {
+    constructor(causedBy, message = errorMessages[602]) {
         super(message)
         this.systemCode = 602
         this.systemCodeContext = `${context}:602`
+        this.causedBy = causedBy
     }
 }
 
@@ -118,6 +120,15 @@ class FileSizeError extends BadRequestError {
     }
 }
 
+class DuplicateUserError extends InsertUserAuthError {
+    constructor(causedBy, message = errorMessages[612]) {
+        super(causedBy, message)
+        this.systemCode = 612
+        this.systemCodeContext = `${context}:612`
+        this.causedBy = causedBy
+    }
+}
+
 module.exports = {
     AuthError,
     DbError,
@@ -130,5 +141,6 @@ module.exports = {
     UploadFileError,
     ThirdPartyError,
     FileMimetypeError,
-    FileSizeError
+    FileSizeError,
+    DuplicateUserError
 }

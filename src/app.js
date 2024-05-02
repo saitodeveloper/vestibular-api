@@ -2,13 +2,13 @@ const express = require('express')
 const { errors } = require('celebrate')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
-const { NotFoundError } = require('./shared/errors.http')
-const { logger } = require('./shared')
 const { v4: uuidv4 } = require('uuid')
-
 const dotenv = require('dotenv')
 
 dotenv.config()
+
+const { NotFoundError } = require('./shared/errors.http')
+const { logger } = require('./shared')
 
 const auth = require('./routes/auth/api')
 const question = require('./routes/question/api')

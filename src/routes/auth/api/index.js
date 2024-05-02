@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { decryptDevice } = require('../middlewares')
+const { decryptDevice, auth } = require('../middlewares')
 const { routerResolver, middlewares } = require('../../../shared')
 const { celebrate: schemaValidator } = require('celebrate')
 const {
@@ -17,8 +17,19 @@ router.post(
     routerResolver.safe(async (req, res) => {
         const auth = req.body
         const { serial, type } = req.context.device
-        const respositoryUser = await service.login(auth, { type, serial })
-        return res.status(200).json(respositoryUser)
+        const tokenObj = await service.login(auth, { type, serial })
+        return res.status(200).json(tokenObj)
+    })
+)
+
+router.get(
+    '/refresh',
+    decryptDevice,
+    auth,
+    routerResolver.safe(async (req, res) => {
+        const { auth, device, tokens } = req.context
+        const tokenObj = await service.refreshLogin(auth, device, tokens)
+        return res.status(200).json(tokenObj)
     })
 )
 
@@ -41,4 +52,5 @@ router.get(
         res.status(200).json(response)
     })
 )
+
 module.exports = router
