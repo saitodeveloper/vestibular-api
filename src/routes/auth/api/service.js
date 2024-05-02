@@ -29,6 +29,24 @@ const createUser = async (user, auth, device, role = 'user') => {
     return mapKeys(userRepository, (_, key) => camelCase(key))
 }
 
+const generateToken = async (payload, device) => {
+    const userToken = token.generate(payload)
+    const authToken = token.generateExpiredToken({ seed: uuidv4() })
+    const refreshToken = token.generate({ seed: uuidv4() })
+    const { userId } = payload
+    const { serial, type } = device
+    await session.create(
+        userId,
+        type,
+        serial,
+        authToken,
+        userToken,
+        refreshToken
+    )
+
+    return { authToken, refreshToken }
+}
+
 const login = async (auth, device) => {
     const { email: identityValue, password } = auth
     const userWithAuth = await repository.loginUser(
@@ -40,14 +58,18 @@ const login = async (auth, device) => {
 
     delete userWithAuth.authorized
     delete userWithAuth.newDeviceAdded
-    const userToken = token.generate(userWithAuth)
-    const authToken = token.generateExpiredToken({ seed: uuidv4() })
-    const refreshToken = token.generate({ seed: uuidv4() })
-    const { userId } = userWithAuth
-    const { serial, type } = device
-    await session.create(userId, type, serial, authToken, userToken)
 
-    return { authToken, refreshToken }
+    return generateToken(userWithAuth, device)
+}
+
+const refreshLogin = async (auth, device, tokens) => {
+    const { userId, role } = auth
+    const { authToken, refreshToken } = tokens
+    const foundRefreshToken = await repository.findRefreshToken(authToken)
+
+    if (refreshToken !== foundRefreshToken) throw new AuthError()
+
+    return generateToken({ userId, role, deviceSerial: device.serial }, device)
 }
 
 const otp = async () => {
@@ -59,6 +81,7 @@ const otp = async () => {
 
 module.exports = {
     createUser,
+    refreshLogin,
     login,
     otp
 }

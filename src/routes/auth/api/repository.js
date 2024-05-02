@@ -55,8 +55,18 @@ const cacheOtpKey = async (key, password, iv) => {
     await client.quit()
 }
 
+const findRefreshToken = async authToken => {
+    let refreshToken = null
+    const client = await db.redis.instance()
+    await client.connect()
+    refreshToken = await client.get(`refresh:${authToken}`)
+    await client.quit()
+    return refreshToken
+}
+
 module.exports = {
     cacheOtpKey,
     createUser,
-    loginUser
+    loginUser,
+    findRefreshToken
 }
