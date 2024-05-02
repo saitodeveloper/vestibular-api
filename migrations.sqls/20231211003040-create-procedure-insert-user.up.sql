@@ -15,7 +15,6 @@ BEGIN
     DECLARE `_inserted_device_id` INT;
     DECLARE `_device_user_id` INT;
     
-    -- Error handler for exceptions
     DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
         GET DIAGNOSTICS CONDITION 1
@@ -84,4 +83,4 @@ BEGIN
         `value`
     FROM `identities` 
     WHERE `id` = `_inserted_indentity_id`;
-END
+END 
