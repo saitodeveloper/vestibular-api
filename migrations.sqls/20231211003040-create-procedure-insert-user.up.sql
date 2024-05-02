@@ -15,9 +15,12 @@ BEGIN
     DECLARE `_inserted_device_id` INT;
     DECLARE `_device_user_id` INT;
     
-    DECLARE exit handler for sqlexception
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
+        GET DIAGNOSTICS CONDITION 1
+        @sqlstate = RETURNED_SQLSTATE, @errno = MYSQL_ERRNO, @text = MESSAGE_TEXT;
         ROLLBACK;
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = @text, MYSQL_ERRNO = @errno;
     END;
 
     START TRANSACTION;
@@ -80,4 +83,4 @@ BEGIN
         `value`
     FROM `identities` 
     WHERE `id` = `_inserted_indentity_id`;
-END
+END 
