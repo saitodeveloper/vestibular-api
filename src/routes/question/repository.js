@@ -2,8 +2,15 @@ const { db, errors, caseConverter } = require('../../shared')
 
 const { InsertQuestionError } = errors.system
 
-const insertQuestion = async (question) => {
-    const { statement, institution, year, examName, alternatives, subjects = [] } = question
+const insertQuestion = async question => {
+    const {
+        statement,
+        institution,
+        year,
+        examName,
+        alternatives,
+        subjects = []
+    } = question
     const result = await db.mysql.query(
         'CALL `insert_question`(?, ?, ?, ?, ?, ?, ?);',
         [
@@ -25,9 +32,13 @@ const insertQuestion = async (question) => {
         item.correct = item.correct === 1
         return item
     })
-    const resultSubjects = result?.at(2) ?? [];
+    const resultSubjects = result?.at(2) ?? []
 
-    return { ...resultQuestion, alternatives: resultAlternatives, subjects: resultSubjects }
+    return {
+        ...resultQuestion,
+        alternatives: resultAlternatives,
+        subjects: resultSubjects
+    }
 }
 
 const searchQuestion = async search => {
@@ -80,22 +91,30 @@ const searchQuestion = async search => {
                     subjects: []
                 }
             }
+            const alreadyAddedAlternative = reducer[
+                questionId
+            ].alternatives.some(item => item.id === alternativeId)
+            const alreadyAddedSubject = reducer[questionId].subjects.some(
+                item => item.id === subjectId
+            )
 
-            reducer[questionId].alternatives.push({
-                id: alternativeId,
-                statement: alternativeStatement,
-                createdAt: alternativeCreatedAt,
-                updatedAt: alternativeUpdatedAt,
-                correct: correct === 1
-            })
+            if (!alreadyAddedAlternative)
+                reducer[questionId].alternatives.push({
+                    id: alternativeId,
+                    statement: alternativeStatement,
+                    createdAt: alternativeCreatedAt,
+                    updatedAt: alternativeUpdatedAt,
+                    correct: correct === 1
+                })
 
-            reducer[questionId].subjects.push({
-                id: subjectId,
-                parent,
-                name,
-                createdAt: subjectCreatedAt,
-                updatedAt: subjectUpdatedAt
-            })
+            if (!alreadyAddedSubject)
+                reducer[questionId].subjects.push({
+                    id: subjectId,
+                    parent,
+                    name,
+                    createdAt: subjectCreatedAt,
+                    updatedAt: subjectUpdatedAt
+                })
 
             return reducer
         }, {})

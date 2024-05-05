@@ -2,7 +2,7 @@ CREATE PROCEDURE `search_question_inclusive` (
     IN `_id` INT,
     IN `_institution` VARCHAR(45),
     IN `_year` INT,
-    IN `_exam_name` VARCHAR(45),
+    IN `_exam_name` VARCHAR(200),
     IN `_enum` INT,
     IN `_id_list` JSON,
     IN `_limit` INT,
