@@ -2,18 +2,13 @@ CREATE PROCEDURE `insert_question` (
     IN `_statement` TEXT,
     IN `_institution`VARCHAR(45),
     IN `_year` INT,
-    IN `_exam_name` VARCHAR(45),
+    IN `_exam_name` VARCHAR(200),
     IN `_enum` INT,
     IN `_alternatives_json` JSON,
     IN `_subjects_id_list_json` JSON 
 )
 BEGIN
     DECLARE `_inserted_question` INT;
-    
-    DECLARE exit handler for sqlexception    
-    BEGIN
-        ROLLBACK;
-    END;
 
     START TRANSACTION;
 
@@ -37,7 +32,7 @@ BEGIN
     INSERT INTO 
         `questions_subjects` (`subject_id`, `question_id` ) 
     SELECT
-        js.`subject_id`, 1 AS `question_id`
+        js.`subject_id`, `_inserted_question` AS `question_id`
     FROM
         JSON_TABLE(
             `_subjects_id_list_json`,

@@ -42,7 +42,7 @@ const QuestionSchema = {
         .positive()
         .min(1940)
         .max(Number.MAX_SAFE_INTEGER),
-    examName: joi.string().min(1).max(45),
+    examName: joi.string().min(1).max(200),
     enum: joi.number().integer().positive().min(1).max(Number.MAX_SAFE_INTEGER),
     ...BaseSchema
 }
